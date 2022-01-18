@@ -13,69 +13,27 @@
         <!--Left Part Start -->
         <aside class="col-sm-4 col-md-3" id="column-left">
             <div class="module menu-category titleLine">
-                <h3 class="modtitle">Categories</h3>
+                <h3 class="modtitle">Категории</h3>
                 <div class="modcontent">
                     <div class="box-category">
                         <ul id="cat_accordion" class="list-group">
-                            <li class="hadchild"><a href="category.html" class="cutom-parent">Smartphone & Tablets</a>
+                            {% for category in categories %}
+                            <li class="hadchild">
+                                <a href="{% url 'category_list' category.slug %}" class="cutom-parent">
+                                    {{ category.name }}
+                                </a>
                                 <span class="button-view  fa fa-plus-square-o"></span>
                                 <ul style="display: block;">
-                                    <li><a href="category.html">Men's Watches</a></li>
-                                    <li><a href="category.html">Women's Watches</a></li>
-                                    <li><a href="category.html">Kids' Watches</a></li>
-                                    <li><a href="category.html">Accessories</a></li>
+                                    {% for subcategory in category.subcategory_set.all %}
+                                    <li>
+                                    <a href="{% url 'subcategory_list' category.slug subcategory.slug %}">
+                                        {{subcategory.name}}
+                                    </a></li>
+                                    {% endfor %}
                                 </ul>
                             </li>
-                            <li class="hadchild"><a class="cutom-parent" href="category.html">Electronics</a> <span
-                                    class="button-view  fa fa-plus-square-o"></span>
-                                <ul style="display: none;">
-                                    <li><a href="category.html">Cycling</a></li>
-                                    <li><a href="category.html">Running</a></li>
-                                    <li><a href="category.html">Swimming</a></li>
-                                    <li><a href="category.html">Football</a></li>
-                                    <li><a href="category.html">Golf</a></li>
-                                    <li><a href="category.html">Windsurfing</a></li>
-                                </ul>
-                            </li>
-                            <li class="hadchild"><a href="category.html" class="cutom-parent">Shoes</a> <span
-                                    class="button-view  fa fa-plus-square-o"></span>
-                                <ul style="display: none;">
-                                    <li><a href="category.html">Sub Categories</a></li>
-                                    <li><a href="category.html">Sub Categories</a></li>
-                                    <li><a href="category.html">Sub Categories</a></li>
-                                    <li><a href="category.html">Sub Categories</a></li>
-                                    <li><a href="category.html">Sub Categories</a></li>
-                                </ul>
-                            </li>
-                            <li class="hadchild"><a href="category.html" class="cutom-parent">Watches</a> <span
-                                    class="button-view  fa fa-plus-square-o"></span>
-                                <ul style="display: none;">
-                                    <li><a href="category.html">Men's Watches</a></li>
-                                    <li><a href="category.html">Women's Watches</a></li>
-                                    <li><a href="category.html">Kids' Watches</a></li>
-                                    <li><a href="category.html">Accessories</a></li>
-                                </ul>
-                            </li>
-                            <li class="hadchild"><a href="category.html" class="cutom-parent">Jewellery</a> <span
-                                    class="button-view  fa fa-plus-square-o"></span>
-                                <ul style="display: none;">
-                                    <li><a href="category.html">Sub Categories</a></li>
-                                    <li><a href="category.html">Sub Categories</a></li>
-                                    <li><a href="category.html">Sub Categories</a></li>
-                                    <li><a href="category.html">Sub Categories</a></li>
-                                    <li><a href="category.html">Sub Categories</a></li>
-                                </ul>
-                            </li>
-                            <li class=""><a href="category.html" class="cutom-parent">Health &amp; Beauty</a> <span
-                                    class="dcjq-icon"></span></li>
-                            <li class=""><a href="category.html" class="cutom-parent">Kids &amp; Babies</a> <span
-                                    class="dcjq-icon"></span></li>
-                            <li class=""><a href="category.html" class="cutom-parent">Sports</a> <span
-                                    class="dcjq-icon"></span></li>
-                            <li class=""><a href="category.html" class="cutom-parent">Home &amp; Garden</a><span
-                                    class="dcjq-icon"></span></li>
-                            <li class=""><a href="category.html" class="cutom-parent">Wines &amp; Spirits</a> <span
-                                    class="dcjq-icon"></span></li>
+                            {% endfor %}
+
                         </ul>
                     </div>
 
@@ -300,41 +258,35 @@
                 <!-- //end Filters -->
                 <!--changed listings-->
                 <div class="products-list row grid">
+                    {% for product in products %}
                     <div class="product-layout col-md-4 col-sm-6 col-xs-12 ">
                         <div class="product-item-container">
                             <div class="left-block">
-                                <div class="product-image-container lazy second_img ">
-                                    <img data-src="image/demo/shop/product/e11.jpg"
-                                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                                         alt="Apple Cinema 30&quot;" class="img-responsive"/>
-                                    <img data-src="image/demo/shop/product/e12.jpg"
-                                         src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                                         alt="Apple Cinema 30&quot;" class="img_0 img-responsive"/>
-                                </div>
-                                <!--Sale Label-->
-                                <span class="label label-sale">Sale</span>
-                                <!--countdown box-->
-                                <div class="countdown_box">
-                                    <div class="countdown_inner">
-                                        <div class="title">This limited offer ends</div>
-
-                                        <div class="defaultCountdown-30"></div>
+                            <div class="product-image-container lazy second_img ">
+                                <img data-src="{{product.image.url}}" src="{{product.image.url}}"  alt="{{product.name}}" class="img-responsive" />
+                            </div>
+                            </div>
+                            <div class="right-block">
+                                <div class="caption">
+                                    <h4><a href="product.html">{{product.name}}</a></h4>
+                                    <div class="price">
+                                        <span class="price-new">{{product.price}}сом</span>
+                                    </div>
+                                    <div class="description item-desc hidden">
+                                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est . </p>
                                     </div>
                                 </div>
-                                <!--end countdown box-->
 
-                                <!--full quick view block-->
-                                <a class="quickview iframe-link visible-lg" data-fancybox-type="iframe"
-                                   href="quickview.html"> Quickview</a>
-                                <!--end full quick view block-->
+                                  <div class="button-group">
+                                    <button class="addToCart" type="button" data-toggle="tooltip" title="Add to Cart" onclick="cart.add('42', '1');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs">Add to Cart</span></button>
+                                    <button class="wishlist" type="button" data-toggle="tooltip" title="Add to Wish List" onclick="wishlist.add('42');"><i class="fa fa-heart"></i></button>
+                                    <button class="compare" type="button" data-toggle="tooltip" title="Compare this Product" onclick="compare.add('42');"><i class="fa fa-exchange"></i></button>
+                                  </div>
                             </div>
-
-
-
-
                         </div>
-                    </div>
 
+                    </div>
+                    {% endfor %}
                 </div>                    <!--// End Changed listings-->
                 <!-- Filters -->
                 <div class="product-filter product-filter-bottom filters-panel">
