@@ -1,0 +1,90 @@
+/*******************************************
+*	Theme Name: Market
+*	Author: Magentech
+*	Author URI: http://www.magentech.com
+*	Version: 1.0.0
+*	Description: This is html5 Sass template 
+*******************************************/
+
+
+
+/**************************************************************
+	Style  Footer 1
+**************************************************************/
+.type_footer1{
+	a{@include linkGray;}
+	.footer-top  ul.menu li > a{
+		@include  transition( all .2s ease);
+		&:hover{margin-#{$left}: 5px;}
+	}
+	.contact-address li:hover span{background-color: $background1;}
+	
+	.collapsed-block.footer-links{
+	    .footer-directory-title{padding: 10px 0 ;}
+	    ul li a:hover{color: $linkColor;}
+	}
+	
+	.footer-directory-title {
+		  @include rem(font-size, 11px);
+		  .label-link{
+			    color: $gray-dark;
+			    font-weight:bold;
+			    padding-bottom: 10px;
+			    @include rem(font-size, 11px);
+		  }
+	}
+}
+
+/**************************************************************
+	Style  Footer 2 
+**************************************************************/
+
+.type_footer2{
+	a{@include linkGray;}
+	.footer-top  ul.menu li > a{ @include  transition( all .2s ease);
+		&:hover{
+			&:before{width:8px; background: $background;}
+		}
+	}
+	.contact-address li:hover span{background-color: $background1;}
+}
+
+
+/**************************************************************
+	Style  Footer 3
+**************************************************************/
+.type_footer3{
+	a{@include linkColor(#bcbdc7,$white);}
+	.footer-top  ul.menu li > a{ @include  transition( all .2s ease);
+		&:hover{
+			&:before{width:8px; background: $background;}
+		}
+	}
+	.contact-address li:hover span{background-color: $background1;}
+}
+
+/**************************************************************
+	Style  Footer 4
+**************************************************************/
+.type_footer4{
+	a{@include linkColor(#c9c9c9,$white);}
+	.footer-center  ul.menu li > a{ @include  transition( all .2s ease);
+		&:hover{
+			&:before{width:8px; background: $background;}
+		}
+	}
+	.contact-address li:hover span{background-color: $background1;}
+}
+
+/**************************************************************
+	Style  Footer 5
+**************************************************************/
+.type_footer5{
+	a{@include linkColor(#c9c9c9,$white);}
+	.footer-center  ul.menu li > a{ @include  transition( all .2s ease);
+		&:hover{
+			&:before{width:8px; background: $background;}
+		}
+	}
+	.contact-address li:hover span{background-color: $background1;}
+}

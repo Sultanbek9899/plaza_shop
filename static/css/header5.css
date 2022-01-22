@@ -1,0 +1,218 @@
+/*******************************************
+*	Theme Name: Market
+*	Author: Magentech
+*	Author URI: http://www.magentech.com
+*	Version: 1.0.0
+*	Description: This is html5 Sass template 
+*******************************************/
+/*===============================================
+	[SASS DIRECTORY ]
+	
+    [1] Minxin Link
+    [2] Minxin Buton
+    [3] Minxin Triangle
+   
+==============================================*/
+.no-margin {
+  margin: 0 !important; }
+
+.marginbottom__3x {
+  margin-bottom: 30px; }
+
+@-webkit-keyframes animLoadedLogo {
+  to {
+    -webkit-transform: translate3d(0, 100%, 0) translate3d(0, 50px, 0) scale3d(0.65, 0.65, 1); } }
+@keyframes animLoadedLogo {
+  to {
+    -webkit-transform: translate3d(0, 100%, 0) translate3d(0, 50px, 0) scale3d(0.65, 0.65, 1);
+    transform: translate3d(0, 100%, 0) translate3d(0, 50px, 0) scale3d(0.65, 0.65, 1); } }
+@-webkit-keyframes animLoadedLoader {
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0) scale3d(0.3, 0.3, 1); } }
+@keyframes animLoadedLoader {
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0) scale3d(0.3, 0.3, 1);
+    transform: translate3d(0, -100%, 0) scale3d(0.3, 0.3, 1); } }
+@-webkit-keyframes animLoadedHeader {
+  to {
+    -webkit-transform: translate3d(0, -100%, 0); } }
+@keyframes animLoadedHeader {
+  to {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0); } }
+@-webkit-keyframes animInitialHeader {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 800px, 0); } }
+@keyframes animInitialHeader {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 800px, 0);
+    transform: translate3d(0, 800px, 0); } }
+/*******************************************************
+  Style Color
+********************************************************/
+/**************************************************************
+	  BLOCK HEADER 
+**************************************************************/
+.topbar {
+  background: #000; }
+
+.block-policy-top {
+  overflow: hidden; }
+  .block-policy-top .policy .policy-inner {
+    padding: 16px 0;
+    color: #999;
+    text-transform: capitalize;
+    min-width: 230px;
+    display: table;
+    margin: 0 auto;
+    text-align: center; }
+    @media (min-width: 1200px) {
+      .block-policy-top .policy .policy-inner:after {
+        content: "";
+        height: 40px;
+        width: 1px;
+        background: #333;
+        position: absolute;
+        z-index: 2;
+        right: 0;
+        top: 15px; } }
+  .block-policy-top .policy:last-child .policy-inner:after {
+    display: none; }
+  .block-policy-top .policy .ico-policy {
+    float: left;
+    margin-right: 10px;
+    background-repeat: no-repeat;
+    background-image: url("../image/theme/icons/icon-image.png"); }
+  .block-policy-top .policy h4 {
+    font-size: 116.6%;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    margin: 0; }
+  .block-policy-top .policy.policy1 .ico-policy {
+    background-position: -130px -315px;
+    width: 34px;
+    height: 36px; }
+  .block-policy-top .policy.policy2 .ico-policy {
+    background-position: -185px -315px;
+    width: 47px;
+    height: 36px; }
+  .block-policy-top .policy.policy3 .ico-policy {
+    background-position: -260px -315px;
+    width: 34px;
+    height: 36px; }
+
+.type_5 {
+  padding: 0 15px !important; }
+  .type_5 .header-top {
+    background: transparent; }
+    .type_5 .header-top .languages-block, .type_5 .header-top .currencies-block {
+      margin: 0;
+      border: none; }
+      .type_5 .header-top .languages-block form:hover, .type_5 .header-top .currencies-block form:hover {
+        background: transparent; }
+      .type_5 .header-top .languages-block a, .type_5 .header-top .currencies-block a {
+        color: #333333; }
+        .type_5 .header-top .languages-block a:hover, .type_5 .header-top .currencies-block a:hover {
+          color: #F4A137; }
+    .type_5 .header-top .btn-shopping-cart ul.dropdown-menu {
+      min-width: 320px; }
+  .type_5 .header-center {
+    padding: 8px 0 25px; }
+  .type_5 .header-bottom {
+    background: transparent;
+    margin-bottom: 0;
+    min-height: auto; }
+  .type_5 .navbar-logo {
+    text-align: center; }
+  .type_5 .shopping_cart .shoppingcart-box:before {
+    right: 10px; }
+  .type_5 .header-top-right {
+    display: inline-block; }
+    .type_5 .header-top-right ul.top-link {
+      list-style: none;
+      margin: 0; }
+      .type_5 .header-top-right ul.top-link > li {
+        display: inline-block;
+        list-style: outside none;
+        vertical-align: middle; }
+        .type_5 .header-top-right ul.top-link > li > a {
+          display: block;
+          font-size: 12px;
+          color: #444; }
+          .type_5 .header-top-right ul.top-link > li > a:hover {
+            color: #F4A137; }
+        .type_5 .header-top-right ul.top-link > li .fa {
+          margin-right: 5px;
+          font-size: 14px; }
+    .type_5 .header-top-right .shopping_cart a.top_cart {
+      display: inline-block; }
+      .type_5 .header-top-right .shopping_cart a.top_cart .handle {
+        margin: 0;
+        width: 45px;
+        height: 36px;
+        background-color: #000;
+        background-position: 13px 9px; }
+      .type_5 .header-top-right .shopping_cart a.top_cart .text-shopping-cart {
+        position: absolute;
+        right: -12px;
+        top: -12px;
+        color: white;
+        background-color: #29beff;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        text-align: center; }
+  .type_5 .header-bottom-right {
+    padding: 0;
+    margin-left: -15px; }
+  .type_5 #sosearchpro .form-control {
+    border: 1px solid #e5e5e5;
+    box-shadow: none;
+    border-radius: 15px 0 0 15px; }
+  .type_5 #sosearchpro .button-search {
+    padding: 7px 12px;
+    background: #555555;
+    color: #fff;
+    border-radius: 0;
+    border-color: #555555;
+    background: #F4A137;
+    border-color: #F4A137;
+    border-radius: 0 15px 15px 0;
+    padding: 6px 12px; }
+    .type_5 #sosearchpro .button-search:hover {
+      background: #F4A137;
+      border-color: #F4A137;
+      color: #fff; }
+    .type_5 #sosearchpro .button-search:hover {
+      background: #555555;
+      border-color: #555555; }
+  @media (min-width: 992px) {
+    .type_5 .horizontal .navbar-default {
+      background-color: transparent;
+      border-color: transparent; }
+      .type_5 .horizontal .navbar-default .megamenu-wrapper {
+        background: transparent; }
+    .type_5 .horizontal ul.megamenu > li > a {
+      color: #333;
+      font-size: 14px;
+      height: auto;
+      padding: 0px 10px;
+      line-height: 30px;
+      text-transform: uppercase;
+      text-shadow: none; }
+    .type_5 .horizontal ul.megamenu > li strong {
+      font-weight: 600; }
+    .type_5 .horizontal ul.megamenu > li.home a, .type_5 .horizontal ul.megamenu > li.active a, .type_5 .horizontal ul.megamenu > li:hover a {
+      background: transparent;
+      color: #F4A137; }
+    .type_5 .horizontal ul.megamenu > li .sub-menu a {
+      color: #444; }
+      .type_5 .horizontal ul.megamenu > li .sub-menu a:hover {
+        color: #F4A137; } }
+
+/*# sourceMappingURL=header5.css.map */

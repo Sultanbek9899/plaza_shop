@@ -1,0 +1,89 @@
+.type_2{
+    //--- BLOCK HEADER -------------------
+    .navbar-welcome{margin: 5px 0;}
+    .header-top-right {display: inline-block;
+        ul.top-link{list-style: none;margin:0; vertical-align:top;
+            > li{display: inline-block; position: relative;float: left;list-style: outside none none;height: 34px; line-height: 34px;
+             >	a {display: block;line-height: 15px; padding: side-values(0 10px 0 20px); position: relative; height: 34px; line-height: 34px; color: $textBody; font-size: 12px;
+                 &:before{background-image: url("#{$base-url-theme}/icons/ico-quicklink.png"); background-repeat: no-repeat;background-position: center -26px; content: ""; height: 16px; #{$left}: 0;position: absolute;top: 10px;width: 18px; @include transition(all 0.3s ease-in-out 0s); }
+                }
+                &.wishlist{
+                    a:before{background-position: center -79px;}
+                }
+                &.checkout{
+                    a:before{background-position: center -139px;}
+                }
+                &.login{
+                    a:before{background-position: center -196px;}
+                }
+                &:hover{background: $background1;
+                    > a{color: #fff;}
+                    &.account a:before{background-position: center 1px;}
+                    &.wishlist{
+                    a:before{background-position: center -53px;}
+                    }
+                    &.checkout{
+                    a:before{background-position: center -109px}
+                    }
+                    &.login{
+                        a:before{background-position: center -168px;}
+                    }
+                }
+                ul.dropdown-link{position: absolute; background: #fff; box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3); left: 0; opacity: 0;
+                padding: 0px 10px; top: 33px;  transition:top 0.3s ease 0s, opacity 0.3s ease 0s; width: 200px; z-index: -1; text-align: left;
+                    li{display: block; border-left: 0;
+                    a{border-right: 0;display: block; padding: 5px 0 4px; border-bottom: solid 1px #efefef; font-size: 11px; line-height: 18px; color: $textBody;
+                        &:hover{color: $linkColor;}
+                        &:after{display: none;}
+                    }
+                    
+                    &:last-child a{border-bottom: 0;}
+                    }
+                }
+                &.account:hover  {
+                    ul.dropdown-link {top: 34px; z-index: 9999; opacity: 1; border-top: 1px solid rgba(200, 199, 199, 0.3);}
+                }
+            }
+        }
+    }
+    .header-top .languages-block, .header-top .currencies-block{margin: 5px 0; border: 1px solid #d2d2d2;}
+    .header-top .languages-block form > a, .header-top .currencies-block form > a{line-height: 20px;}
+
+    
+    //--------------- MODULE SEARCH ------------
+    #sosearchpro{ width: 100%; padding: 8px 0;
+        .select_category{
+            width: 140px;
+            vertical-align: middle;
+            border: 1px solid #e5e5e5;
+            background: #eee;
+            display: table-cell;
+            position: relative;z-index: 1;
+            select{ border: none; background: transparent; padding: 5px 10px;}
+        }
+        //.icon-select:after{font-family: $FontAwesome;content: "\f107"; margin: 6px; background: #eee; font-size: 14px; position: absolute;top: 0; #{$right}: 0;color: black;}
+        .form-control{border: 1px solid #e5e5e5; box-shadow: none; min-height: 36px;}
+        .button-search{height: 36px; background: $background1; border: none;
+            i{font-size: 18px; color: white; }
+            &:hover{background: $background1; 
+                i{color: #fff;}
+            }
+        }
+    }
+
+    // BLOCK MENU ------------------------
+    @media (min-width: 992px) {
+        .horizontal{
+            .navbar-default{background-color: transparent; border-color: transparent;
+                .megamenu-wrapper{background: transparent;}
+            }
+            ul.megamenu {
+                    > li{
+                          > a{color: #666;font-size: 14px; height: auto; padding: 0 10px; line-height: 36px;border-radius: 3px; text-transform: uppercase; text-shadow: none;}
+                    } 
+                    > li.active > a, > li.home > a, > li:hover > a{background: $background1; color: #fff;}
+             
+            } 
+        }
+    }
+}

@@ -1,30 +1,39 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views.generic import TemplateView, ListView, DetailView
+from django.shortcuts import get_object_or_404
 # Create your views here.
+
 from products.models import Category, Product, SubCategory
 
 
-def index(request):
-    return render(request, "index.html")
+class IndexView(TemplateView):
+    template_name = "index.html"
 
 
-def product_list(request, category_slug=None, subcategory_slug=None):
-    if subcategory_slug:
-        try:
-            subcategory=SubCategory.objects.get(slug=subcategory_slug)
-        except Subcategory.DoesNotExist:
-            print("Не найдено")
-        products = Product.objects.filter(is_active=True, subcategory=subcategory)
-    elif category_slug: # telefony-i-akss
-        try:
-            category = Category.objects.get(slug=category_slug)
-        except Category.DoesNotExist:
-            print("Не найдено")
-        products = Product.objects.filter(is_active=True, category=category)
-    else:
-        products = Product.objects.filter(is_active=True)
-    context = {
-        "products": products,
-    }
-    return render(request, 'product_list.html', context=context)
+class ProductListView(ListView):
+    model = Product
+    template_name = "product_list.html"
+    context_object_name = "products"
+    paginate_by = 2
 
+    def get_queryset(self, **kwargs):
+        category_slug = self.kwargs.get("category_slug")
+        subcategory_slug = self.kwargs.get("subcategory_slug")
+        if subcategory_slug:
+            subcategory = get_object_or_404(SubCategory, slug=subcategory_slug)
+            queryset = self.model.objects.filter(
+                is_active=True,
+                subcategory=subcategory)
+            return queryset
+        elif category_slug:
+            category = get_object_or_404(Category, slug=category_slug)
+            queryset = self.model.objects.filter(is_active=True, category=category)
+            return queryset
+        queryset = self.model.objects.filter(is_active=True)
+        return queryset
+
+
+class ProductDetailView(DetailView):
+    model = Product
+    template_name = "product_detail.html"

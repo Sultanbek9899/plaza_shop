@@ -1,0 +1,197 @@
+.module--5x{margin-bottom: 55px;}
+.module--4x{margin-bottom: 45px;}
+.module h3.modtitle{color:$gray-dark;}
+
+//--------------------SLIDESHOW --------------------
+
+/**************************************************************
+		HTML Content
+**************************************************************/
+.banner1-id7{margin-top: 30px;
+	@include breakpoint(lg){margin-top: -100px;position: relative;z-index: 9; margin-bottom: 40px;}
+}
+.list-info-bottom{ border-#{$right}: 1px solid $input-border;
+	li{margin-bottom: 15px;}
+	a{@include linkColor($gray-darker,$linkColor);}
+}
+
+//----------------Block-Policy ---------
+
+.services-v1{
+	.policy-inner{border: 3px solid transparent;padding: 20px 28px;height: 80px; background: #f2f2f2;margin-bottom: 10px;}
+	.policy-inner:hover{border-color: $linkColor;}	
+	span{float: $left; text-indent: -999em; margin-#{$right}: 10px;background-repeat: no-repeat;}
+	h2{font-size: 116.6%;font-weight: bold;text-transform: uppercase;color: #444; margin: 0;}
+	a{color: #999;text-transform: capitalize;}
+	
+	.policy1 .ico-policy{background-image: url('#{$base-url-theme}/icons/ico-money.png'); width: 27px;height: 36px;}
+	.policy2 .ico-policy {background-image: url('#{$base-url-theme}/icons/ico-freeship.png');width: 53px;height: 32px;}
+	.policy3 .ico-policy{background-image: url('#{$base-url-theme}/icons//ico-celander.png');width: 33px;height: 34px;}
+	.policy4 .ico-policy{background-image: url('#{$base-url-theme}/icons/ico-umbrella.png');width: 34px; height: 34px;}
+}
+
+//----------------Slider-Brand ---------
+.slider-brand--home6{ padding: 0 ; direction: ltr;
+	.owl2-controls{@include owl-controls($background,'default'); opacity: 0;
+		.owl2-nav .owl2-prev{#{$left}:-30px;}
+		.owl2-nav .owl2-next{#{$right}:-30px;}
+	}
+	&:hover .owl2-controls {opacity: 1;}
+	
+	a{border: 1px solid #ddd; display: block;
+		&:hover{border-color: $linkColor;}
+	}	
+}
+
+.eg-list-floated-1{ padding: 0;
+	@include scut-list-floated;
+   // or @extend %scut-list-floated;
+}
+
+//------------CLIENT SAY------------
+.eg-list-inline-1 { text-align: center; 
+	@include scut-list-inline; // or @extend %scut-list-inline;
+	margin-bottom: 15px;
+	> li{border-radius: 50%; overflow: hidden;margin: 0 5px;background: $gray-darker; cursor: pointer;
+		
+		&:hover img{opacity: 0.6}
+		&:not(.active) img{ opacity: 0.4;}
+	}
+}
+.slider-clientsay__item{max-width: 600px; margin: 0 auto; text-align: center;color: $gray-dark;
+	.slider-clientsay__dec{    font-size: 16px;position: relative;margin-bottom: 30px; line-height: 30px;
+		@include breakpoint(lg){		
+		&:before,&:after{
+			position: absolute;
+			content: '';
+			display: inline-block;
+			width: 26px;
+			height: 15px;
+			background: url('#{$base-url-theme}icons/icon-image.png') no-repeat -22px -329px;
+		}
+		&:before{   top: 0px;left: -20px;}
+		&:after{    bottom: 0px;right: -20px;}
+		}
+	}
+	.slider-clientsay__info{
+		h4{
+			text-transform: uppercase;
+			font-weight: 600;
+			font-size: 18px;
+		}
+		p{
+			font-size: 116.67%;
+			text-transform: uppercase;
+			color: $white;
+		}	
+	}
+}
+/*----------------EXTRA SLIDER -----------------------*/
+div.extraslider-home5{ 
+	.so-extraslider{margin: 0 ; vertical-align: top; direction: ltr;
+		.owl2-controls{width: 100%;position: absolute; top: -30px;
+			@include owl-controls($background,'listing_tabs');
+		}
+	}
+	
+}
+
+
+div.product-style__5.grid{
+	.owl2-stage-outer{margin: 0 -10px;padding: 0 10px;}
+	.product-layout{ margin: 0;text-align: center;
+		.product-item-container{margin: 10px 0 ; border: none ; padding: 10px;
+			&:hover{box-shadow: 0px 0 5px 0px rgba(0, 0, 0, 0.3) !important;
+				.left-block .quickview{ background:$gray;
+					&:hover{background:$background;}
+				}
+				.addToCart {
+					background: $background; color: white;border-color: $background;
+					.button-group__text{ width:90px; text-indent: 0;}				
+				}
+				
+			}
+		}
+		.caption h4{font-size: 14px; overflow: hidden;text-overflow: ellipsis;
+			a{color: $gray; white-space: nowrap;}
+		}	
+		.price .price-new{font-weight: 600;}
+		.button-group {
+			button{ padding: 5px 10px ; height: auto ;color: $input-color-placeholder;}
+			.fa{float: left; font-size: 15px; margin: 3px 0 0 ;}
+			.button-group__text{width:0;overflow: hidden; float: left; font-weight: bold; @include transition(all 0.3s ease-in-out); text-indent: -9em;}
+		}
+		
+	}
+}
+
+/*----------------LISTING TABS -----------------------*/
+div.tab-slider--full{
+	@include breakpoint(lg){background: #f2f2f2; padding: 40px 0 ;}
+	.container{position: relative;z-index: 2;}
+}
+
+div.tab-slider{position: relative; z-index: 1; 
+	h3.modtitle {position: absolute;top: 5px;}
+	.so-listing-tabs{margin: 0 ; vertical-align: top;direction: ltr;
+		.ltabs-wrap,.ltabs-items-container .ltabs-items-inner,.ltabs-wrap .ltabs-items-container,
+		.ltabs-items-container .ltabs-items{overflow: visible;}
+		.ltabs-wrap .ltabs-tabs-container{margin: 0 0 10px 0; overflow: visible;}
+		.ltabs-slider__gallery{
+			.product-layout .caption h4{font-size: 18px;}
+			.thumbs-product{margin-top: 25px; overflow: hidden;}
+			.button-group{padding: 10px 0;}
+			.price{font-size: 24px;margin-top: 15px;}
+			.item-img	{
+				float: $left;
+				border: 1px solid #ddd;
+				
+				margin-#{$right}: 10px;
+				margin-bottom: 10px;
+				cursor: pointer;
+				&.thumb-active{border-color:$background;}
+			}
+		}
+		.ltabs-tabs-container .ltabs-tabs-wrap{height: 36px;border-bottom: 1px solid #ddd;
+			.item-sub-cat__right{
+				.ltabs-tabs{float: $right;margin-#{$right}: 80px;
+					li{border: 0; margin: 0; padding: 0;
+						span{padding: 0 12px;}
+						&:hover{background: transparent; border-bottom: 0;
+							span{color: $linkColor;}
+						}
+					&.tab-sel{ background-color: transparent;border-#{$left}: 1px solid #ddd; border-bottom: 1px solid #f2f2f2;
+							margin-top: 1px; padding-bottom: 1px;margin-bottom: 0px;border-#{$right}: 1px solid #ddd;border-top: 3px solid $linkColor;;
+								span{color: $linkColor;}
+								
+							}
+					}	
+				}
+			}
+			.item-sub-cat__divided{
+				.ltabs-tabs{
+					@media (min-width: 768px){@include scut-list-divided;
+						li{border: 0; margin: 0 ; padding: 2px 0 3px; float: $left;
+							span{font-weight: 600;font-size: 16px;color:$input-color-placeholder;}
+							&:hover{background: transparent; border-bottom: 0;
+								span{color: $gray-dark;}
+							}
+							&.tab-sel{ background: transparent; 
+								span{color: $gray-dark;}
+							}
+						}
+					}	
+				}
+			}
+		}
+		.owl2-controls{width: 100%;position: absolute; top: -15px;
+			@include owl-controls($background,'listing_tabs');
+		}
+	}
+	.ltabs-items-container .ltabs-items{
+		.ltabs-item{margin-bottom: 0 !important;}
+		.product-item-container{background: $white;}
+		@extend .products-list;
+	}
+}
+

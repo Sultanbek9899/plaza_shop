@@ -247,10 +247,13 @@
                         </div>
                         <div class="box-pagination col-md-3 col-sm-4 col-xs-12 text-right">
                             <ul class="pagination">
-                                <li class="active"><span>1</span></li>
-                                <li><a href="">2</a></li>
-                                <li><a href="">&gt;</a></li>
-                                <li><a href="">&gt;|</a></li>
+                                {% if page_obj.has_previous %}
+                                    <li><a href="?page={{page_obj.previous_page_number}}"><</a></li>
+                                {% endif %}
+                                <li class="active"><span>{{page_obj.number}}</span></li>
+                                {% if page_obj.has_next %}
+                                <li><a href="?page={{page_obj.next_page_number}}">&gt;</a></li>
+                                {% endif %}
                             </ul>
                         </div>
                     </div>

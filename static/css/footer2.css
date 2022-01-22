@@ -1,0 +1,167 @@
+/*******************************************
+*	Theme Name: Market
+*	Author: Magentech
+*	Author URI: http://www.magentech.com
+*	Version: 1.0.0
+*	Description: This is html5 Sass template 
+*******************************************/
+/*===============================================
+	[SASS DIRECTORY ]
+	
+    [1] Minxin Link
+    [2] Minxin Buton
+    [3] Minxin Triangle
+   
+==============================================*/
+.no-margin {
+  margin: 0 !important; }
+
+.marginbottom__3x {
+  margin-bottom: 30px; }
+
+@-webkit-keyframes animLoadedLogo {
+  to {
+    -webkit-transform: translate3d(0, 100%, 0) translate3d(0, 50px, 0) scale3d(0.65, 0.65, 1); } }
+@keyframes animLoadedLogo {
+  to {
+    -webkit-transform: translate3d(0, 100%, 0) translate3d(0, 50px, 0) scale3d(0.65, 0.65, 1);
+    transform: translate3d(0, 100%, 0) translate3d(0, 50px, 0) scale3d(0.65, 0.65, 1); } }
+@-webkit-keyframes animLoadedLoader {
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0) scale3d(0.3, 0.3, 1); } }
+@keyframes animLoadedLoader {
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0) scale3d(0.3, 0.3, 1);
+    transform: translate3d(0, -100%, 0) scale3d(0.3, 0.3, 1); } }
+@-webkit-keyframes animLoadedHeader {
+  to {
+    -webkit-transform: translate3d(0, -100%, 0); } }
+@keyframes animLoadedHeader {
+  to {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0); } }
+@-webkit-keyframes animInitialHeader {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 800px, 0); } }
+@keyframes animInitialHeader {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 800px, 0);
+    transform: translate3d(0, 800px, 0); } }
+/*******************************************************
+  Style Color
+********************************************************/
+/**************************************************************
+	  Footer Wrapper
+**************************************************************/
+.footer-container {
+  padding: 34px 0 0; }
+
+.footer-top .footer-lines {
+  color: #E4E4E4;
+  margin: 40px 0 30px; }
+.footer-top .icons-social {
+  text-align: center; }
+  .footer-top .icons-social .modtitle {
+    margin: 10px 20px; }
+  .footer-top .icons-social > * {
+    display: inline-block;
+    vertical-align: middle; }
+.footer-top .module h3.modtitle {
+  /* [4] */
+  /* [6] */
+  /* [6] */
+  /* [7] */
+  font-size: 16px;
+  /* [8] */
+  font-size: 1.6rem;
+  /* [8] */
+  text-transform: uppercase; }
+.footer-top .module ul.menu li > a {
+  position: relative;
+  padding: 5px 0 5px 0px;
+  display: block; }
+  .footer-top .module ul.menu li > a:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 15px;
+    height: 1px;
+    width: 0px;
+    background-color: #e4e4e4;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    transition: all 0.2s ease; }
+  .footer-top .module ul.menu li > a:hover {
+    padding-left: 12px; }
+
+.contact-address li {
+  color: #444444;
+  padding: 0 0 5px 41px;
+  position: relative;
+  z-index: 1;
+  line-height: 18px;
+  min-height: 40px; }
+.contact-address span {
+  /* [4] */
+  /* [6] */
+  /* [6] */
+  /* [7] */
+  font-size: 18px;
+  /* [8] */
+  font-size: 1.8rem;
+  /* [8] */
+  left: 0px;
+  position: absolute;
+  background-color: #969696;
+  top: 4px;
+  color: white;
+  border-radius: 2px;
+  width: 30px;
+  line-height: 30px;
+  text-align: center; }
+.contact-address > li:nth-child(2) {
+  padding-top: 7px; }
+  .contact-address > li:nth-child(2) span {
+    margin-top: -1px; }
+.contact-address > li:last-child {
+  padding-top: 8px; }
+  .contact-address > li:last-child span {
+    margin-top: 7px; }
+
+.footer-container {
+  background: white; }
+
+.footer-bottom-block {
+  background: #f2f2f2;
+  padding: 14px 0; }
+  .footer-bottom-block .payment-footer img {
+    margin: 0 3px; }
+
+ul.footer-directory {
+  list-style: outside none none;
+  padding: 0;
+  margin: 0; }
+  ul.footer-directory li {
+    padding-bottom: 2px; }
+    ul.footer-directory li h4 {
+      color: #333333;
+      display: inline-block;
+      font-weight: bold;
+      line-height: 22px;
+      text-transform: uppercase;
+      /* [4] */
+      /* [6] */
+      /* [6] */
+      /* [7] */
+      font-size: 11px;
+      /* [8] */
+      font-size: 1.1rem;
+      /* [8] */
+      margin: 0 5px 0 0; }
+
+/*# sourceMappingURL=footer2.css.map */

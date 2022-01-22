@@ -1,0 +1,402 @@
+/* 	+----------------------------------------------------+
+		TABLE OF CONTENTS
+	+----------------------------------------------------+
+
+	[1]		Page Faq
+	[2]		Page About us
+	[3]		Page Contact
+	[4]		page 404 
+	
+*/
+#map-canvas{height:600px;}
+
+//---------------Page FQA -------------------------
+ul.yt-accordion{margin: 0;padding:0; list-style: none;}
+ul.yt-accordion li.accordion-group { margin-bottom: 1px;
+     h3.accordion-heading{margin: 0; cursor: pointer;background-color: #f4f4f4; position: relative;z-index: 2;
+          span{padding: 10px;font-size: 16px; display: block; margin-#{$left}: 40px; line-height: 24px;}
+          .fa{
+                margin: 0px;
+               font-family: verdana;
+               font-size: 17px;
+               width: 40px;
+              
+               background: #A0A0A0;
+               color: white;
+               text-align: center;
+               line-height: 40px;
+               vertical-align: top;
+			position: absolute; z-index: 5; top:0;bottom: 0;
+          }
+     }
+
+     .accordion-inner {border: 1px solid #f4f4f4;  padding: 10px 15px;background: #E6E6E3;}
+}
+ul.yt-accordion li.accordion-group h3.accordion-heading .fa-plus-square:before{content: "+";}
+ul.yt-accordion li.accordion-group h3.accordion-heading.active .fa-plus-square:before {content: "-";}
+ul.yt-accordion li.accordion-group h3.accordion-heading:hover {color: white;background: #8E8E8E;}
+ul.yt-accordion li.accordion-group h3.accordion-heading:hover .fa{background: #666;}
+
+
+//---------------Page About us -------------------------
+.about-us{ 
+  
+  .about-title{
+    font-size:171%;
+    font-style: italic;
+    font-weight: bold;
+     margin-bottom: 20px;
+  }
+
+  .name-member{
+    font-size:116.67%;
+    font-weight: bold;
+  }
+
+  .job-member{
+    margin:7px 0 5px;
+    font-style: italic;
+
+    &:before,
+    &:after{
+      content: "---";
+      margin:0 5px;
+    }
+  }
+
+  .social-member{
+    list-style: none;
+
+    .social-icon{
+      display: inline-block;
+      margin:0 3px;
+
+      a{
+        display: inline-block;
+        color:#fff;
+        font-size: 16px;
+        width:30px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        border-radius: 50%;
+        border-radius: 50%;
+
+        span{ display: none;
+        }
+
+        &:hover{background-color: $background1!important; }
+      }
+
+      &.rss{
+        a{ background-color: #f8bc2e; }
+      }
+
+      &.facebook{
+        a{background-color: #39599f; }
+      }
+
+      &.twitter{
+        a{background-color: #45b0e3;}
+      }
+
+      &.google{
+        a{ background-color: #1872bf;}
+      }
+    }
+  }
+
+  .des-member.des-client{
+    max-width: 950px;
+    margin: 0 auto;
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+
+  .member-info{
+    text-align: center;
+    padding-top:15px;
+  }
+
+  .client-say-content{
+    text-align: center;
+    .client-say-slider{
+      padding-top:15px;
+
+      .owl2-dots{
+        position: absolute;
+        left:0;
+        top:-23px;
+        width: 100%;
+
+        span{
+          width: 16px;
+          height:16px;
+          background-color: #d9d9d9;
+          border:none;
+          margin:0 2px;
+          opacity: 1; display: block;border-radius: 50%; -webkit-border-radius: 50%;
+        }
+
+        .owl2-dot{display: inline-block;
+          &.active{
+            span{
+              background-color: #929292;
+            }
+          }
+
+          span:hover{
+            background-color: #929292;
+          }
+        }
+
+      }
+    }
+
+  }
+
+  .about-us-center{
+    text-align: center;
+
+    .content-description{
+      padding-top: 25px;
+      clear: both;
+      margin-bottom: 30px;
+    }
+  }
+
+  .client-logo-content{
+    border-bottom: 1px dashed #e7e7e7;
+    border-top: 1px dashed #e7e7e7;
+    padding-bottom: 10px;
+    text-align: center;
+
+    .about-title{
+      background: #fff none repeat scroll 0 0;
+      display: inline-block;
+      margin: 0;
+      padding: 0 10px;
+      position: relative;
+      text-align: center;
+      top: -19px;
+    }
+  }
+
+  .owl2-controls{
+    .owl2-nav{
+      div{
+        color:#fff;
+        border_radius: 50%;
+        position: absolute;
+        top:29%;
+        overflow: visible; display: inline-block; width: 34px; height: 34px; text-indent: -9999px;; margin: 0 3px; background-color: #A6A6A8; border-radius: 50%; -webkit-border-radius: 50%;
+        &:hover{
+          background-color: $background1;
+        }
+
+        &.owl2-next{
+          right:-19px;
+        }
+
+        &.owl2-prev{
+          left:-19px;
+        }
+
+        &:before{
+          width: 100%;
+          height:100%;
+          border-radius: 50%;
+          -webkit-border-radius: 50%;
+          background-color: #a6a6a7;
+          line-height: 32px;
+          top: 1px;
+        }
+
+        &:hover{
+
+          &:before{
+            background-color: $background1;         }
+
+        }
+      }
+    }
+  }
+
+  .client-logo-slider{
+    padding:0 25px;
+	img{width:auto; display: inline-block;}
+  }
+
+  .about-image-slider{
+    max-width: 570px;
+    margin: 0 auto;
+
+    .owl2-controls .owl2-nav div{
+      top:50%;
+      margin-top:-15px;
+      border:none!important;
+      border-radius: 0;
+      -webkit-border-radius: 0;
+      overflow: hidden;
+      border-radius: 3px;
+      -webkit-border-radius: 3px;
+
+      &:before{
+        border-radius: 0;
+        -webkit-border-radius:0;
+        background-color: transparent;
+        color: #c8c8c8; 
+      }
+
+      &.owl2-next{
+        right:10px;
+      }
+
+      &.owl2-prev{
+        left:10px;
+      }
+
+      &:hover{
+        border-color: $background1;
+
+        &:before{
+          color: #fff;
+        }
+      }
+    }
+  }
+
+
+.skills-value {
+      padding-top: 52px;
+      .label-skill{font-weight: bold;}
+}
+ 
+
+  .about-us-content .description-about{
+    padding:20px 0;
+  }
+
+  .content-faq{
+    position: relative;
+    top:-15px;
+
+    .panel{
+      box-shadow: none;
+      -webkit-box-shadow: none;
+      border-bottom: 1px solid #e7e7e7;
+      border-radius: 0;
+      -webkit-border-radius: 0;
+      margin:0;
+
+      .panel-title{
+        font-size: 100%;
+        font-weight: bold;
+        a{
+          display: block;
+          padding: side-values(15px 0 15px 25px);
+          position: relative;
+
+          &:after{
+            transform: rotate(135deg);
+           
+            content:"";
+            width: 4px;
+            height:4px;
+            position: absolute;
+            #{$left}:6px;
+            top:50%;
+            margin-top: 6px;
+            background-color: $background1;
+          }
+
+          &:before{
+            background-color: $background1;
+            content: "-";
+            width: 16px;
+            height:16px;
+            display: inline-block;
+            position: absolute;
+            #{$left}:0px;
+            top:50%;
+            margin-top:-8px;
+            border-radius: 2px;
+            -webkit-border-radius: 2px;
+            color: #fff;
+            text-align: center;
+            line-height: 16px;
+          }
+
+          &.collapsed{
+            &:after{
+              background-color: #737373;
+            }
+
+            &:before{
+              background-color: #737373;
+              content: "?";
+            }
+          }
+        }
+      }
+
+      .panel-body{
+        padding: 0 0 13px;
+      }
+    }
+  }
+	.owl2-theme .owl2-controls .owl2-nav{
+		> div:before{display: inline-block; text-indent: 0; width: 100%;height: 100%;position: absolute; left: 0px; top: 1px; color: #fff;font-size: 18px;line-height: 32px;text-align: center;border-radius: 50%; -webkit-border-radius: 50%;}
+		> div.owl2-prev:before{content: "\f104"; font-family: FontAwesome;}
+		> div.owl2-next:before{content: "\f105"; font-family: FontAwesome;}
+		
+	} 
+}
+
+.about-demo-1{
+  .about-image,
+  .about-info{
+    margin-bottom: 40px;
+  }
+
+     .what-client-say{
+       margin-bottom: 60px;
+     }
+
+     .line-hori{
+       text-align: center;position: relative;z-index: 3;
+       > span{    background: white;display: inline-block;position: relative;z-index: 10;padding: 0 20px;}
+       &:before{position: absolute;content: "";border-bottom: 1px dashed #ccc;top: 50%;left: 0; height: 1px;width: 100%;z-index: 3;}
+     }
+  
+}
+
+.about-demo-2{
+  .our-team{
+    margin-bottom: 60px;
+  }
+}
+
+.about-demo-3{
+  .about-image,
+  .about-info{
+    margin-bottom: 30px;
+  }
+
+}
+
+//---------------Page Contact us -------------------------
+.info-contact{
+    .name-store h3{ padding: 7px 0px; margin-top: 10px;}
+    .icon{float: $left; padding-#{$right}: 15px;
+        .fa{font-size: 20px;}
+    }
+    .comment{line-height: 24px;}
+}
+.contact-form{
+    legend{border-bottom: 0;}
+    
+}
+
+//---------------Page 404 -------------------------
+

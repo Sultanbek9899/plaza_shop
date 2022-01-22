@@ -1,0 +1,81 @@
+
+
+
+/**************************************************************
+		HTML Content
+**************************************************************/
+//---------------BLOCK Popular Search  -------------------------
+.so-searchbox-popular-title {color: $gray-base;margin: 0;line-height: 23px;font-size: 14px;}
+.so-searchbox-keyword{
+	a{@include linkGray();}
+}
+
+
+
+
+//----------------Block-2 ---------
+.htmlcontent-block{
+	ul li{margin-bottom: 10px;position: relative;
+		&:last-child{margin-bottom: 0;}
+		
+	} 
+}
+/*----------BANNER POLICY ---------*/
+.policy-detail{box-shadow: 3px 3px 0 0 #d9d9d9;background-color: #eee;
+	.banner-policy{padding: 44px 0;overflow: hidden;
+		.policy{border-right: 1px solid #ddd;border-bottom: 0; padding: 0 27px; width: 25%; float: left; font-size: 14px;
+			&.policy4{border-right: 0;}
+		}
+	}
+}
+.collections.module h3.modtitle{line-height: 18px; padding-bottom: 5px;}
+
+
+
+/*----------------LISTING TABS -----------------------*/
+div.tab-slider{margin: 0;position: relative; z-index: 1;
+	h3.modtitle {position: absolute;top: 5px;}
+	.so-listing-tabs{margin: 0 ; vertical-align: top;
+		.ltabs-wrap,.ltabs-items-container .ltabs-items-inner,.ltabs-wrap .ltabs-items-container,
+		.ltabs-items-container .ltabs-items{overflow: visible;}
+		.ltabs-wrap .ltabs-tabs-container{margin: 0 0 5px 0; overflow: visible;}
+		.ltabs-tabs-container .ltabs-tabs-wrap{height: 36px;border-bottom: 1px solid #ddd;
+			.ltabs-tabs{float: $right;margin-#{$right}: 80px;
+				li{border: 0; margin: 0; padding: 0;
+					span{padding: 0 12px;}
+					&:hover{background: transparent; border-bottom: 0;
+						span{color: $linkColor;}
+					}
+			&.tab-sel{ background-color: white;border-#{$left}: 1px solid #ddd; border-bottom: 1px solid white;
+						margin-top: 1px; padding-bottom: 1px;margin-bottom: 0px;border-#{$right}: 1px solid #ddd;border-top: 3px solid $linkColor;;
+							span{color: $linkColor;}
+							
+						}
+				}	
+			}
+		}
+		.owl2-controls{width: 100%;position: absolute; top: -23px;
+			.owl2-nav .owl2-prev,
+			.owl2-nav .owl2-next{
+				width: 20px;height: 27px; border: 1px solid #ddd;background-image: url('#{$base-url-theme}icons/ico-slider.png'); background-repeat: no-repeat;
+				background-color: #fff; display: inline-block; text-indent: -999em;background-position: -31px 0; position: absolute;  transition: all 0.2s ease-in-out 0s; #{$left}: inherit;
+				@include if-ltr {#{$right}: 25px;}
+				@include if-rtl { #{$right}: 0px;}
+				&:hover{background-color: $background1; background-position: 0px 0; border-color: $linkColor;}
+				&:before{display: none;}
+			}
+			.owl2-nav .owl2-next{
+				background-position: -60px 0;
+				
+				@include if-ltr {#{$right}: 0px;}
+				@include if-rtl { #{$right}: 25px;}
+			
+				&:hover{ background-position: -90px 0;}
+			}
+		} 
+	}
+	.ltabs-items-container .ltabs-items{
+		@extend .products-list;
+	}
+}
+

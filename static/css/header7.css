@@ -1,0 +1,202 @@
+/*******************************************
+*	Theme Name: Market
+*	Author: Magentech
+*	Author URI: http://www.magentech.com
+*	Version: 1.0.0
+*	Description: This is html5 Sass template 
+*******************************************/
+/*===============================================
+	[SASS DIRECTORY ]
+	
+    [1] Minxin Link
+    [2] Minxin Buton
+    [3] Minxin Triangle
+   
+==============================================*/
+.no-margin {
+  margin: 0 !important; }
+
+.marginbottom__3x {
+  margin-bottom: 30px; }
+
+@-webkit-keyframes animLoadedLogo {
+  to {
+    -webkit-transform: translate3d(0, 100%, 0) translate3d(0, 50px, 0) scale3d(0.65, 0.65, 1); } }
+@keyframes animLoadedLogo {
+  to {
+    -webkit-transform: translate3d(0, 100%, 0) translate3d(0, 50px, 0) scale3d(0.65, 0.65, 1);
+    transform: translate3d(0, 100%, 0) translate3d(0, 50px, 0) scale3d(0.65, 0.65, 1); } }
+@-webkit-keyframes animLoadedLoader {
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0) scale3d(0.3, 0.3, 1); } }
+@keyframes animLoadedLoader {
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0) scale3d(0.3, 0.3, 1);
+    transform: translate3d(0, -100%, 0) scale3d(0.3, 0.3, 1); } }
+@-webkit-keyframes animLoadedHeader {
+  to {
+    -webkit-transform: translate3d(0, -100%, 0); } }
+@keyframes animLoadedHeader {
+  to {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0); } }
+@-webkit-keyframes animInitialHeader {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 800px, 0); } }
+@keyframes animInitialHeader {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 800px, 0);
+    transform: translate3d(0, 800px, 0); } }
+/*******************************************************
+  Style Color
+********************************************************/
+/**************************************************************
+	  BLOCK HEADER 
+**************************************************************/
+.type_7 {
+  background: #222222;
+  display: table;
+  width: 100%; }
+  @media (min-width: 1200px) {
+    .type_7 {
+      background: none;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      z-index: 999; } }
+  .type_7 .header-top {
+    background: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
+    .type_7 .header-top .languages-block, .type_7 .header-top .currencies-block {
+      margin: 0;
+      border: none; }
+      .type_7 .header-top .languages-block form:hover, .type_7 .header-top .currencies-block form:hover {
+        background: transparent; }
+      .type_7 .header-top .languages-block a.btn, .type_7 .header-top .currencies-block a.btn {
+        color: #fff;
+        text-decoration: none;
+        padding: 2px 10px; }
+        .type_7 .header-top .languages-block a.btn:hover, .type_7 .header-top .currencies-block a.btn:hover {
+          color: #F4A137; }
+  .type_7 .header-center {
+    padding: 25px 0 25px; }
+  .type_7 .header-bottom {
+    background: transparent; }
+    .type_7 .header-bottom .header-bottom__content {
+      background: #fff; }
+  .type_7 .header-top-right {
+    display: inline-block; }
+    .type_7 .header-top-right ul.top-link {
+      list-style: none;
+      margin: 6px 0; }
+      .type_7 .header-top-right ul.top-link > li {
+        display: inline-block;
+        list-style: outside none;
+        vertical-align: middle; }
+        .type_7 .header-top-right ul.top-link > li > a {
+          display: block;
+          font-size: 12px;
+          color: #fff;
+          text-decoration: none; }
+          .type_7 .header-top-right ul.top-link > li > a:hover {
+            color: #F4A137; }
+        .type_7 .header-top-right ul.top-link > li .fa {
+          margin-left: 5px;
+          font-size: 14px; }
+  .type_7 .phone-contact {
+    color: #fff; }
+    @media (min-width: 1200px) {
+      .type_7 .phone-contact {
+        padding: 0; } }
+    .type_7 .phone-contact .inner-info {
+      text-transform: uppercase;
+      padding-right: 45px;
+      background: url("../image/theme//home6/icon-phone.png") right top no-repeat;
+      background-position: right 5px; }
+  .type_7 .shopping_cart {
+    padding: 0 15px; }
+    .type_7 .shopping_cart a.top_cart {
+      display: inline-block; }
+      .type_7 .shopping_cart a.top_cart .shopcart .title {
+        color: #fff; }
+      .type_7 .shopping_cart a.top_cart .shopcart .text-shopping-cart {
+        color: #fff; }
+  .type_7 #sosearchpro {
+    margin-top: 4px;
+    padding-left: 30px; }
+    .type_7 #sosearchpro .select_category {
+      vertical-align: middle;
+      background: #fff;
+      border-radius: 20px 0 0 20px;
+      display: table-cell;
+      padding: 0 10px;
+      position: relative;
+      z-index: 1; }
+      .type_7 #sosearchpro .select_category select {
+        border: none;
+        height: 34px;
+        cursor: pointer; }
+    .type_7 #sosearchpro .form-control {
+      border: 1px solid #e5e5e5;
+      box-shadow: none;
+      min-height: 40px; }
+    .type_7 #sosearchpro .button-search {
+      padding: 7px 12px;
+      background: #555555;
+      color: #fff;
+      border-radius: 0;
+      border-color: #555555;
+      background: #F4A137;
+      border-color: #F4A137;
+      padding: 9px 12px;
+      border-radius: 0 20px 20px 0;
+      min-width: 54px; }
+      .type_7 #sosearchpro .button-search:hover {
+        background: #F4A137;
+        border-color: #F4A137;
+        color: #fff; }
+      .type_7 #sosearchpro .button-search:hover {
+        background: #555555;
+        border-color: #555555; }
+  @media (min-width: 992px) {
+    .type_7 .vertical .megamenuToogle-wrapper {
+      background: transparent; }
+      .type_7 .vertical .megamenuToogle-wrapper .container {
+        padding: 20px 12px;
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: #222222; }
+        .type_7 .vertical .megamenuToogle-wrapper .container > div span {
+          background: #222222; }
+    .type_7 .horizontal .navbar-default {
+      background-color: transparent;
+      border-color: transparent; }
+      .type_7 .horizontal .navbar-default .megamenu-wrapper {
+        background: transparent; }
+    .type_7 .horizontal ul.megamenu .label-hot {
+      position: absolute;
+      z-index: 2;
+      top: -10px;
+      left: 0px; }
+    .type_7 .horizontal ul.megamenu > li > a {
+      color: #222222;
+      font-size: 14px;
+      text-transform: uppercase;
+      padding: 8px 10px;
+      line-height: 45px;
+      text-shadow: none; }
+    .type_7 .horizontal ul.megamenu > li strong {
+      font-weight: 600; }
+    .type_7 .horizontal ul.megamenu > li.home a, .type_7 .horizontal ul.megamenu > li.active a, .type_7 .horizontal ul.megamenu > li:hover a {
+      background: transparent;
+      color: #F4A137; }
+    .type_7 .horizontal ul.megamenu > li .sub-menu a {
+      color: #444; }
+      .type_7 .horizontal ul.megamenu > li .sub-menu a:hover {
+        color: #F4A137; } }

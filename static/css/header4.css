@@ -1,0 +1,209 @@
+/*******************************************
+*	Theme Name: Market
+*	Author: Magentech
+*	Author URI: http://www.magentech.com
+*	Version: 1.0.0
+*	Description: This is html5 Sass template 
+*******************************************/
+/*===============================================
+	[SASS DIRECTORY ]
+	
+    [1] Minxin Link
+    [2] Minxin Buton
+    [3] Minxin Triangle
+   
+==============================================*/
+.no-margin {
+  margin: 0 !important; }
+
+.marginbottom__3x {
+  margin-bottom: 30px; }
+
+@-webkit-keyframes animLoadedLogo {
+  to {
+    -webkit-transform: translate3d(0, 100%, 0) translate3d(0, 50px, 0) scale3d(0.65, 0.65, 1); } }
+@keyframes animLoadedLogo {
+  to {
+    -webkit-transform: translate3d(0, 100%, 0) translate3d(0, 50px, 0) scale3d(0.65, 0.65, 1);
+    transform: translate3d(0, 100%, 0) translate3d(0, 50px, 0) scale3d(0.65, 0.65, 1); } }
+@-webkit-keyframes animLoadedLoader {
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0) scale3d(0.3, 0.3, 1); } }
+@keyframes animLoadedLoader {
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0) scale3d(0.3, 0.3, 1);
+    transform: translate3d(0, -100%, 0) scale3d(0.3, 0.3, 1); } }
+@-webkit-keyframes animLoadedHeader {
+  to {
+    -webkit-transform: translate3d(0, -100%, 0); } }
+@keyframes animLoadedHeader {
+  to {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0); } }
+@-webkit-keyframes animInitialHeader {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 800px, 0); } }
+@keyframes animInitialHeader {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 800px, 0);
+    transform: translate3d(0, 800px, 0); } }
+/*******************************************************
+  Style Color
+********************************************************/
+/**************************************************************
+	  BLOCK HEADER 
+**************************************************************/
+.type_4 .header-top {
+  background: transparent;
+  border-bottom: 1px solid #eee; }
+.type_4 .header-bottom {
+  background: #666;
+  margin-bottom: 30px; }
+.type_4 .header-center {
+  padding: 25px 0; }
+.type_4 .header-top-left {
+  padding: 5px 0; }
+.type_4 .header-top-right {
+  display: inline-block; }
+  .type_4 .header-top-right ul.top-link {
+    list-style: none;
+    margin: 0;
+    vertical-align: top; }
+    .type_4 .header-top-right ul.top-link > li {
+      display: inline-block;
+      position: relative;
+      float: left;
+      list-style: outside none none;
+      height: 34px;
+      line-height: 34px; }
+      .type_4 .header-top-right ul.top-link > li > a {
+        display: block;
+        line-height: 15px;
+        padding: 0 10px 0 20px;
+        position: relative;
+        height: 34px;
+        line-height: 34px;
+        color: #666;
+        font-size: 12px; }
+        .type_4 .header-top-right ul.top-link > li > a:before {
+          background-image: url("../image/theme//icons/ico-quicklink.png");
+          background-repeat: no-repeat;
+          background-position: center -26px;
+          content: "";
+          height: 16px;
+          left: 0;
+          position: absolute;
+          top: 10px;
+          width: 18px;
+          -webkit-transition: all 0.3s ease-in-out 0s;
+          -moz-transition: all 0.3s ease-in-out 0s;
+          transition: all 0.3s ease-in-out 0s; }
+      .type_4 .header-top-right ul.top-link > li.wishlist a:before {
+        background-position: center -79px; }
+      .type_4 .header-top-right ul.top-link > li.checkout a:before {
+        background-position: center -139px; }
+      .type_4 .header-top-right ul.top-link > li.login a:before {
+        background-position: center -196px; }
+      .type_4 .header-top-right ul.top-link > li:hover {
+        background: #F4A137; }
+        .type_4 .header-top-right ul.top-link > li:hover > a {
+          color: #fff; }
+        .type_4 .header-top-right ul.top-link > li:hover.account a:before {
+          background-position: center 1px; }
+        .type_4 .header-top-right ul.top-link > li:hover.wishlist a:before {
+          background-position: center -53px; }
+        .type_4 .header-top-right ul.top-link > li:hover.checkout a:before {
+          background-position: center -109px; }
+        .type_4 .header-top-right ul.top-link > li:hover.login a:before {
+          background-position: center -168px; }
+.type_4 .wishlist-block li {
+  padding: 0 2px; }
+.type_4 .wishlist-block a {
+  color: #666;
+  display: block;
+  background: #eee;
+  border-radius: 3px;
+  width: 36px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px; }
+  .type_4 .wishlist-block a:hover {
+    background: #F4A137;
+    color: #fff; }
+.type_4 .languages-block, .type_4 .currencies-block {
+  border: 1px solid #eee;
+  background: #eee;
+  margin: 0 2px;
+  border-radius: 3px;
+  z-index: 65; }
+  .type_4 .languages-block form > a, .type_4 .currencies-block form > a {
+    line-height: 24px; }
+.type_4 .shopping_cart {
+  padding: 0 15px; }
+  .type_4 .shopping_cart .btn-group {
+    display: block;
+    width: auto; }
+  .type_4 .shopping_cart a.top_cart {
+    display: block;
+    position: relative;
+    border-radius: 3px !important;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+    margin-top: 8px;
+    padding: 1px 10px;
+    overflow: hidden; }
+    .type_4 .shopping_cart a.top_cart .shopcart {
+      display: block;
+      overflow: hidden; }
+      .type_4 .shopping_cart a.top_cart .shopcart .title {
+        padding-right: 6px;
+        font-weight: normal;
+        text-transform: none;
+        color: white; }
+      .type_4 .shopping_cart a.top_cart .shopcart .text-shopping-cart {
+        display: inline-block;
+        line-height: 32px;
+        margin: 0;
+        color: white; }
+    .type_4 .shopping_cart a.top_cart .handle {
+      width: 36px;
+      height: 32px;
+      margin: 0;
+      margin-right: 10px;
+      background-color: transparent; }
+.type_4 #sosearchpro {
+  padding: 7px 0; }
+  .type_4 #sosearchpro .select_category {
+    width: 140px;
+    vertical-align: middle;
+    border: 1px solid #e5e5e5;
+    background: #fff;
+    display: table-cell;
+    position: relative;
+    z-index: 1; }
+    .type_4 #sosearchpro .select_category select {
+      border: none;
+      background-color: transparent;
+      padding: 5px 10px;
+      cursor: pointer; }
+  .type_4 #sosearchpro .form-control {
+    border: 1px solid #e5e5e5;
+    border-left: none;
+    border-right: none;
+    box-shadow: none;
+    min-height: 36px; }
+  .type_4 #sosearchpro .button-search {
+    height: 36px;
+    background: #aaaaaa;
+    border: 0px solid #e5e5e5;
+    border-left: none;
+    box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.2) inset;
+    border-radius: 0 3px 3px 0; }
+    .type_4 #sosearchpro .button-search i {
+      font-size: 18px;
+      color: white; }
+
+/*# sourceMappingURL=header4.css.map */

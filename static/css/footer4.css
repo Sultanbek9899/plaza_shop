@@ -1,0 +1,190 @@
+/*******************************************
+*	Theme Name: Market
+*	Author: Magentech
+*	Author URI: http://www.magentech.com
+*	Version: 1.0.0
+*	Description: This is html5 Sass template 
+*******************************************/
+/*===============================================
+	[SASS DIRECTORY ]
+	
+    [1] Minxin Link
+    [2] Minxin Buton
+    [3] Minxin Triangle
+   
+==============================================*/
+.no-margin {
+  margin: 0 !important; }
+
+.marginbottom__3x {
+  margin-bottom: 30px; }
+
+@-webkit-keyframes animLoadedLogo {
+  to {
+    -webkit-transform: translate3d(0, 100%, 0) translate3d(0, 50px, 0) scale3d(0.65, 0.65, 1); } }
+@keyframes animLoadedLogo {
+  to {
+    -webkit-transform: translate3d(0, 100%, 0) translate3d(0, 50px, 0) scale3d(0.65, 0.65, 1);
+    transform: translate3d(0, 100%, 0) translate3d(0, 50px, 0) scale3d(0.65, 0.65, 1); } }
+@-webkit-keyframes animLoadedLoader {
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0) scale3d(0.3, 0.3, 1); } }
+@keyframes animLoadedLoader {
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0) scale3d(0.3, 0.3, 1);
+    transform: translate3d(0, -100%, 0) scale3d(0.3, 0.3, 1); } }
+@-webkit-keyframes animLoadedHeader {
+  to {
+    -webkit-transform: translate3d(0, -100%, 0); } }
+@keyframes animLoadedHeader {
+  to {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0); } }
+@-webkit-keyframes animInitialHeader {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 800px, 0); } }
+@keyframes animInitialHeader {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 800px, 0);
+    transform: translate3d(0, 800px, 0); } }
+/*******************************************************
+  Style Color
+********************************************************/
+/**************************************************************
+	  Footer Wrapper
+**************************************************************/
+.footer-container {
+  padding: 0;
+  background-color: #333333;
+  color: #fff; }
+
+.footer-lines {
+  border-top: 1px solid #484848;
+  margin: 0 15px 30px 15px;
+  clear: both;
+  width: calc(100% - 30px); }
+
+.footer-top {
+  padding: 30px 0;
+  background: #f2f2f2; }
+  .footer-top .module {
+    margin: 0; }
+
+.footer-center {
+  padding: 40px 0 0; }
+  .footer-center .icons-social {
+    text-align: center; }
+    .footer-center .icons-social .modtitle {
+      margin: 0 20px; }
+    .footer-center .icons-social > * {
+      display: inline-block;
+      vertical-align: middle; }
+  .footer-center .module h3.modtitle {
+    /* [4] */
+    /* [6] */
+    /* [6] */
+    /* [7] */
+    font-size: 16px;
+    /* [8] */
+    font-size: 1.6rem;
+    /* [8] */
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #fff; }
+  .footer-center .module ul.menu li > a {
+    position: relative;
+    padding: 5px 0 5px 0px;
+    display: block; }
+    .footer-center .module ul.menu li > a:before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 15px;
+      height: 1px;
+      width: 0px;
+      background-color: #e4e4e4;
+      -webkit-transition: all 0.2s ease;
+      -moz-transition: all 0.2s ease;
+      transition: all 0.2s ease; }
+    .footer-center .module ul.menu li > a:hover {
+      padding-left: 12px; }
+
+div.subscribe-home input.form-control {
+  min-height: 40px;
+  color: #999;
+  border-radius: 40px;
+  padding: 6px 20px;
+  border: none;
+  box-shadow: none; }
+  @media (min-width: 1200px) {
+    div.subscribe-home input.form-control {
+      min-width: 400px; } }
+div.subscribe-home .btn {
+  padding: 7px 12px;
+  background: #555555;
+  color: #fff;
+  border-radius: 0;
+  border-color: #555555;
+  background: #F4A137;
+  border-color: #F4A137;
+  min-height: 40px;
+  border-radius: 40px;
+  text-transform: uppercase;
+  padding: 6px 20px;
+  font-weight: bold; }
+  div.subscribe-home .btn:hover {
+    background: #F4A137;
+    border-color: #F4A137;
+    color: #fff; }
+  div.subscribe-home .btn:hover {
+    background: #555555;
+    border-color: #555555; }
+
+.contact-address li {
+  color: #bcbdc7;
+  padding: 0 0 5px 41px;
+  position: relative;
+  z-index: 1;
+  line-height: 18px;
+  min-height: 40px; }
+.contact-address span {
+  /* [4] */
+  /* [6] */
+  /* [6] */
+  /* [7] */
+  font-size: 18px;
+  /* [8] */
+  font-size: 1.8rem;
+  /* [8] */
+  left: 0px;
+  position: absolute;
+  background-color: #4b5056;
+  top: 4px;
+  color: white;
+  border-radius: 2px;
+  width: 30px;
+  line-height: 30px;
+  text-align: center; }
+.contact-address > li:nth-child(2) {
+  padding-top: 7px; }
+  .contact-address > li:nth-child(2) span {
+    margin-top: -1px; }
+.contact-address > li:last-child {
+  padding-top: 8px; }
+  .contact-address > li:last-child span {
+    margin-top: 7px; }
+
+@media (min-width: 1200px) {
+  .footer--social {
+    text-align: -webkit-right; } }
+.footer-bottom-block {
+  padding: 10px 0; }
+  .footer-bottom-block .payment-footer img {
+    margin: 0 3px; }
+
+/*# sourceMappingURL=footer4.css.map */

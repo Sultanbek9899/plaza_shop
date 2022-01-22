@@ -1,0 +1,114 @@
+
+.module h3.modtitle{color:$gray-dark;}
+
+//--------------------SLIDESHOW --------------------
+#so-slideshow{
+	.slideshow{ direction: ltr;
+		.owl2-controls .owl2-nav{
+			div{ position: absolute;top: 44.5%;outline: 0;width: 30px;height: 50px;font-size: 0; z-index: 9; transition: all 0.3s ease;
+				&.owl2-prev{left: 0px;background: url("#{$base-url-theme}/icons/arrow-slider-left.png") no-repeat;
+					&:hover{background-position: 0 -59px;}
+				}
+				&.owl2-next{right: 0px;background: url("#{$base-url-theme}/icons/arrow-slider-right.png") no-repeat;
+					&:hover{background-position: 0 -59px;}
+				}
+			}
+		}
+	}
+}
+
+/**************************************************************
+		HTML Content
+**************************************************************/
+.list-info-bottom{ border-#{$right}: 1px solid $input-border;
+	li{margin-bottom: 15px;}
+	a{@include linkColor($gray-darker,$linkColor);}
+}
+
+
+//----------------Slidee-Brand ---------
+
+
+.eg-vcenter-td-1{ padding: 0;margin-bottom: 20px;
+	@include scut-vcenter-td("li");
+   // or @extend %scut-list-floated;
+}
+.subscribe-home{
+	input.form-control{min-height: 40px;border-radius: 40px; padding: 6px 20px;}
+	.btn{@include buttonColor();min-height: 40px;border-radius: 40px;text-transform: uppercase;font-weight: 600; padding: 6px 20px;font-size: 12px;}
+}
+
+/*----------------EXTRA SLIDER -----------------------*/
+div.extraslider-home5{ direction: ltr;
+	h3.modtitle{margin-bottom: 20px;}
+	.so-extraslider{margin: 0 ; vertical-align: top; direction: ltr;
+		.owl2-controls{width: 100%;position: absolute; top: -40px;
+			@include owl-controls($background,'listing_tabs');
+		}
+	}
+	
+}
+
+
+div.product-style__5.grid{
+	.owl2-stage-outer{margin: 0 -10px;padding: 0 10px;}
+	.product-layout{ margin: 0;text-align: center;
+		.product-item-container{margin: 10px 0 ; border: none ; padding: 10px;
+			&:hover{box-shadow: 0px 0 5px 0px rgba(0, 0, 0, 0.3) !important;
+				.left-block .quickview{ background:$gray;
+					&:hover{background:$background;}
+				}
+				.addToCart {
+					background: $background; color: white;border-color: $background;
+					.button-group__text{ width:90px; text-indent: 0;}				
+				}
+				
+			}
+		}
+		.caption h4{font-size: 14px; overflow: hidden;text-overflow: ellipsis;
+			a{color: $gray; white-space: nowrap;}
+		}	
+		.price .price-new{font-weight: 600;}
+		.button-group {
+			button{ padding: 5px 10px ; height: auto ;color: $input-color-placeholder;}
+			.fa{float: left; font-size: 15px; margin: 3px 0 0 ;}
+			.button-group__text{width:0;overflow: hidden; float: left; font-weight: bold; @include transition(all 0.3s ease-in-out); text-indent: -9em;}
+		}
+		
+	}
+}
+
+/*----------------LISTING TABS -----------------------*/
+div.tab-slider{margin: 0;position: relative; z-index: 1; 
+	
+	.so-listing-tabs{margin: 0 ; vertical-align: top; overflow:visible;
+		.ltabs-wrap,.ltabs-items-container .ltabs-items-inner,.ltabs-wrap .ltabs-items-container,
+		.ltabs-items-container .ltabs-items{overflow: visible;}
+		.ltabs-wrap .ltabs-tabs-container{margin: 0 0 5px 0; overflow: visible;}
+		.ltabs-tabs-container .ltabs-tabs-wrap{border-bottom: 1px solid #ddd;
+			&.tabs-wrap__Line{
+				&:after{content: "";height: 1px;width:120px;background: $background1;display: block;margin-bottom: -1px;}
+			}	
+			.ltabs-tabs{
+				@media (min-width: 768px){@include scut-list-divided;
+					li{border: 0; margin: 0 ; padding: 5px 0; float: $left;
+						span{font-weight: 600;font-size: 16px;color:$input-color-placeholder;}
+						&:hover{background: transparent; border-bottom: 0;
+							span{color: $gray-dark;}
+						}
+						&.tab-sel{ background: transparent; 
+							span{color: $gray-dark;}
+						}
+					}
+				}
+			}
+		}
+		.owl2-controls{width: 100%;position: absolute; top: -15px;
+			@include owl-controls($background,'listing_tabs');
+		} 
+	}
+	.ltabs-items-container .ltabs-items { direction: ltr;
+		.ltabs-slider .product-layout{margin-bottom: 0}	
+	}
+}
+

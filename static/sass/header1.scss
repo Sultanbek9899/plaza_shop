@@ -1,0 +1,104 @@
+/*******************************************
+*	Theme Name: Market
+*	Author: Magentech
+*	Author URI: http://www.magentech.com
+*	Version: 1.0.0
+*	Description: This is html5 Sass template 
+*******************************************/
+
+// Override default value for $dir in directional.scss
+$dir: lrt;
+
+//** simple and lightweight mixin library for Sass **
+//-- url : http://bourbon.io/docs ---
+@import 'bourbon/bourbon';
+
+//** Mixins for Rem Font Sizing **
+//-- url : http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/
+@import 'directional/rem';
+
+//** Variables for responsive design in bootstrap with sass **
+//-- url : https://gist.github.com/webinfinita/11407836
+@import 'directional/bootstrap_breakpoints';
+
+//** Makes supporting both left-to-right (LTR) and right-to-left (RTL) easy.**
+//-- url : https://github.com/tysonmatanich/directional-scss
+@import 'directional/directional';
+
+//Mixins Utilities & Variables
+@import 'variables/utilities';
+@import "variables/orange";
+
+/**************************************************************
+	  BLOCK HEADER 
+**************************************************************/
+.type_1{
+    //--- BLOCK HEADER -------------------
+    .header-top-right {display: inline-block; 
+        ul.top-link{list-style: none;margin:0;vertical-align:top;
+            > li{display: inline-block; position: relative;border-#{$right}: 1px solid $list-group-border;float: left;list-style: outside none none;height: 34px; line-height: 34px;
+                >	a {display: block;line-height: 15px; padding: 0 10px; position: relative; height: 34px; line-height: 34px; width: 12px; font-size: 0;
+                    &:before{background-image: url("#{$base-url-theme}icons/ico-quicklink.png"); background-repeat: no-repeat; content: ""; height: 16px;#{$left}: 0;position: absolute;top: 10px;width: 18px; @include transition(all 0.3s ease-in-out 0s); }
+                }
+                &.account{
+                    >a{color: #fff; padding-#{$left}: 20px; padding-#{$right}: 0px; text-indent: inherit;  width: auto; @include rem(font-size, 12px); line-height: 30px;
+                        .fa-angle-down{margin-#{$left}: 5px;}
+                    }
+                    &.inactive{border-color: $list-group-border; background-color: transparent;
+                        a {display: block; padding: 0 10px; position: relative; height: 34px; line-height: 34px; width: 17px; @include rem(font-size, 0px);
+                           &:before{background-image: url("#{$base-url-theme}/icons/ico-quicklink.png"); background-repeat: no-repeat; content: ""; height: 16px;left: 0;position: absolute;top: 10px;width: 18px; @include transition(all 0.3s ease-in-out 0s); background-position: center -26px;}
+                          }
+                        .fa-angle-down{display: none;}
+                    }
+                }
+                 &:hover{
+                    a{width: auto; @include rem(font-size, 12px); padding-#{$left}: 20px;}
+                 }
+    
+                &.wishlist a:before{background-position: center -79px;}
+                
+                &.checkout a:before{background-position: center -139px;}
+                
+                &.login a:before{background-position: center -196px;}
+                
+                &:hover{
+                    > a{color: #fff;}
+                     &.wishlist{
+                           a:before{background-position: center -53px;}
+                     }
+                     &.checkout{
+                           a:before{background-position: center -109px}
+                     }
+                     &.login{
+                        a:before{background-position: center -168px;}
+                     }
+                }
+    
+                &.account:hover  {
+                    ul.dropdown-link {top: 34px; z-index: 9999; opacity: 1; border-top: 1px solid rgba(200, 199, 199, 0.3);}
+                }
+               
+                
+            }
+        }
+    }
+    .header-bottom-right {
+        padding: 0;margin-#{$left}: -15px;
+    }
+
+    
+    //---------------BLOCK SEARCH PRO  -------------------------
+    #sosearchpro {margin-top:4px;
+        .select_category {
+            vertical-align: middle;
+            border: 1px solid #e5e5e5;
+            background: #eee;
+            display: table-cell;
+            width: 160px;
+            position: relative;z-index: 1;
+            select{ border: none; background-color: transparent; padding: 5px 10px; cursor: pointer;}
+         }
+        .form-control{border: 1px solid #e5e5e5; box-shadow: none; min-height: 36px;}
+        .button-search{border-radius: 0;@include buttonGray;}
+    }
+}

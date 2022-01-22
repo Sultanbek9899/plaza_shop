@@ -1,0 +1,78 @@
+/*******************************************************************
+******                SO Framework: Sass Menu                 ******
+********************************************************************/
+div.horizontal{
+	ul.megamenu > li{float: $left;}
+	ul.megamenu .sub-menu .title-submenu,
+	ul.megamenu li .sub-menu .content .static-menu a.main-menu{
+		text-transform: uppercase;
+		color:$gray-darker;
+		border-bottom: 1px solid #ddd;
+		font-size: 13px;
+		font-weight: bold;
+		padding-bottom: 5px;
+		margin-bottom: 5px;
+		
+	}
+	ul.megamenu .sub-menu .image-link{margin-bottom: 10px; @include linkGrayDark();} 
+	.image-link{
+		.thumbnail{position: relative; overflow: hidden; border-radius: 0;background: #fff;padding: 3px; margin: 0 0 10px;}
+		
+		.btn {position: absolute; top:-100px;left: calc(50% - 50px); @include buttonColor(); @include transition(all 0.3s ease-in-out 0s);border-radius: 2px;}
+		&:hover { 
+			.thumbnail{border: 1px solid #bcbcbc; background: #ddd;
+				img{opacity: 0.8;}
+			}
+		}
+		.figcaption{font-size: 12px; text-align: center; text-transform: uppercase;margin-top:0; }
+	}
+	ul.megamenu .label-hot {position: absolute;z-index: 2;top: -10px; #{$right}: 0px;}
+	ul.megamenu .sub-menu .content {border-top: 3px solid $linkColor;}
+	ul.megamenu .sub-menu a{@include linkGray; line-height: 24px;display: block; padding: 3px 0;}
+	@include breakpoint(lg){ul.megamenu .megamenu--container {min-width: 1170px;}}
+	
+}
+
+header .so-megamenu .navbar-header{color: white;}
+
+@media (min-width: 992px) {
+	
+	div.so-vertical-menu { position: relative;
+		
+		.vertical-wrapper{border-top: 3px solid $linkColor;}
+		ul.megamenu > li{border: none;
+			a{@include linkGray; line-height: 24px;
+				@include if-rtl {
+					img{margin:0 0 0 5px;}
+				}
+			}
+			> a:hover, &.loadmore:hover{background:  $background; color: white;
+				.caret{background-position: center 0;}
+			}
+			.caret{
+				background: url("#{$base-url-theme}icons/ico-menu-parent.png") no-repeat;
+				width: 15px;
+				height: 15px;
+				background-position: center -25px;
+				border:none;
+				margin: 5px  0;
+				position: absolute;
+				#{$right}: 10px;
+				@include if-rtl {transform: rotate(180deg);}
+			}
+			&.loadmore{    border-top: 1px solid #ddd;}
+			.sub-menu{
+				@include if-rtl { right: 100% !important;left: auto;}
+			}
+		}
+		ul.megamenu > li.active > a{background:  $background; color: white;}
+		
+	}
+}
+.list-product{padding: 0;
+	.image{margin-#{$right}:15px;}
+	.caption{
+		h4{margin: 0; @include rem(font-size, 14px);}
+	}	
+}
+.megamenuToogle-wrapper .container > div{float: $left; margin: side-values(3px 10px 0px 0px);}

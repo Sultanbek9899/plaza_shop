@@ -1,0 +1,12 @@
+.so-onepagecheckout {
+   background: #f5f5f5;
+   padding: 20px 20px 0 20px;
+   overflow: hidden;
+   .col-left{padding: 0;}
+   .col-right{padding-right: 0;}
+   .panel {border-radius: 0; padding: 10px; display: inline-block;width:100%;}
+   .panel-default .panel-heading{background: rgb(95, 104, 116); color:white; border-radius: 0;}
+   .no-padding{padding:0;}
+   .checkout-shipping-methods,
+   .checkout-payment-methods{padding: 10px;}
+}

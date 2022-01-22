@@ -1,0 +1,200 @@
+/*******************************************
+*	Theme Name: Market
+*	Author: Magentech
+*	Author URI: http://www.magentech.com
+*	Version: 1.0.0
+*	Description: This is html5 Sass template 
+*******************************************/
+/*===============================================
+	[SASS DIRECTORY ]
+	
+    [1] Minxin Link
+    [2] Minxin Buton
+    [3] Minxin Triangle
+   
+==============================================*/
+.no-margin {
+  margin: 0 !important; }
+
+.marginbottom__3x {
+  margin-bottom: 30px; }
+
+@-webkit-keyframes animLoadedLogo {
+  to {
+    -webkit-transform: translate3d(0, 100%, 0) translate3d(0, 50px, 0) scale3d(0.65, 0.65, 1); } }
+@keyframes animLoadedLogo {
+  to {
+    -webkit-transform: translate3d(0, 100%, 0) translate3d(0, 50px, 0) scale3d(0.65, 0.65, 1);
+    transform: translate3d(0, 100%, 0) translate3d(0, 50px, 0) scale3d(0.65, 0.65, 1); } }
+@-webkit-keyframes animLoadedLoader {
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0) scale3d(0.3, 0.3, 1); } }
+@keyframes animLoadedLoader {
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0) scale3d(0.3, 0.3, 1);
+    transform: translate3d(0, -100%, 0) scale3d(0.3, 0.3, 1); } }
+@-webkit-keyframes animLoadedHeader {
+  to {
+    -webkit-transform: translate3d(0, -100%, 0); } }
+@keyframes animLoadedHeader {
+  to {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0); } }
+@-webkit-keyframes animInitialHeader {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 800px, 0); } }
+@keyframes animInitialHeader {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 800px, 0);
+    transform: translate3d(0, 800px, 0); } }
+/*******************************************************
+  Style Color
+********************************************************/
+/**************************************************************
+	  BLOCK HEADER 
+**************************************************************/
+.type_3 .header-bottom {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 4px 4px 4px #ddd;
+  margin-bottom: 30px; }
+.type_3 .header-top-right {
+  display: inline-block; }
+  .type_3 .header-top-right ul.top-link {
+    list-style: none;
+    margin: 0;
+    vertical-align: top; }
+    .type_3 .header-top-right ul.top-link > li {
+      display: inline-block;
+      position: relative;
+      float: left;
+      list-style: outside none none;
+      height: 34px;
+      line-height: 34px; }
+      .type_3 .header-top-right ul.top-link > li > a {
+        display: block;
+        line-height: 15px;
+        padding: 0 10px 0 20px;
+        position: relative;
+        height: 34px;
+        line-height: 34px;
+        color: #666;
+        font-size: 12px; }
+        .type_3 .header-top-right ul.top-link > li > a:before {
+          background-image: url("../image/theme//icons/ico-quicklink.png");
+          background-repeat: no-repeat;
+          background-position: center -26px;
+          content: "";
+          height: 16px;
+          left: 0;
+          position: absolute;
+          top: 10px;
+          width: 18px;
+          -webkit-transition: all 0.3s ease-in-out 0s;
+          -moz-transition: all 0.3s ease-in-out 0s;
+          transition: all 0.3s ease-in-out 0s; }
+      .type_3 .header-top-right ul.top-link > li.wishlist a:before {
+        background-position: center -79px; }
+      .type_3 .header-top-right ul.top-link > li.checkout a:before {
+        background-position: center -139px; }
+      .type_3 .header-top-right ul.top-link > li.login a:before {
+        background-position: center -196px; }
+      .type_3 .header-top-right ul.top-link > li:hover > a {
+        color: #fff; }
+      .type_3 .header-top-right ul.top-link > li:hover.account a:before {
+        background-position: center 1px; }
+      .type_3 .header-top-right ul.top-link > li:hover.wishlist a:before {
+        background-position: center -53px; }
+      .type_3 .header-top-right ul.top-link > li:hover.checkout a:before {
+        background-position: center -109px; }
+      .type_3 .header-top-right ul.top-link > li:hover.login a:before {
+        background-position: center -168px; }
+      .type_3 .header-top-right ul.top-link > li.account:hover ul.dropdown-link {
+        top: 34px;
+        z-index: 9999;
+        opacity: 1;
+        border-top: 1px solid rgba(200, 199, 199, 0.3); }
+.type_3 .header-top-left .navbar-welcome {
+  padding: 5px 0;
+  margin-bottom: 0; }
+.type_3 .header-top .languages-block, .type_3 .header-top .currencies-block {
+  margin: 5px 0;
+  border: 1px solid #d2d2d2; }
+.type_3 .header-top .languages-block form > a, .type_3 .header-top .currencies-block form > a {
+  line-height: 20px; }
+@media (min-width: 1200px) {
+  .type_3 .phone-contact {
+    padding: 0; } }
+.type_3 .phone-contact .inner-info {
+  padding-left: 45px;
+  background: url("../image/theme//home3/ico-phone.png") left top no-repeat;
+  background-position: left 5px; }
+  @media (min-width: 1200px) {
+    .type_3 .phone-contact .inner-info {
+      border-right: 1px solid #ddd; } }
+.type_3 #sosearchpro {
+  width: auto;
+  padding: 5px 0; }
+  .type_3 #sosearchpro .select_category {
+    width: 140px;
+    vertical-align: middle;
+    border: 1px solid #e5e5e5;
+    background: #fff;
+    display: table-cell;
+    position: relative;
+    z-index: 1; }
+    .type_3 #sosearchpro .select_category select {
+      border: none;
+      background-color: transparent;
+      padding: 5px 10px;
+      cursor: pointer; }
+  .type_3 #sosearchpro .form-control {
+    border: 1px solid #e5e5e5;
+    border-left: none;
+    border-right: none;
+    box-shadow: none;
+    min-height: 36px; }
+  .type_3 #sosearchpro .button-search {
+    height: 36px;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-left: none; }
+@media (min-width: 992px) {
+  .type_3 .horizontal .navbar-default {
+    background-color: transparent;
+    border-color: transparent; }
+    .type_3 .horizontal .navbar-default .megamenu-wrapper {
+      background: transparent; }
+  .type_3 .horizontal ul.megamenu > li > a {
+    color: #fff;
+    font-size: 14px;
+    height: auto;
+    padding: 0 15px;
+    line-height: 48px;
+    text-transform: uppercase;
+    text-shadow: none; }
+    .type_3 .horizontal ul.megamenu > li > a:after {
+      position: absolute;
+      content: "";
+      width: 1px;
+      height: 20px;
+      background-color: #888;
+      right: 0;
+      top: 50%;
+      margin-top: -10px; }
+  .type_3 .horizontal ul.megamenu > li > a:hover, .type_3 .horizontal ul.megamenu > li.active > a, .type_3 .horizontal ul.megamenu > li.home > a, .type_3 .horizontal ul.megamenu > li:hover > a {
+    background: #F4A137;
+    color: #fff; }
+    .type_3 .horizontal ul.megamenu > li > a:hover:after, .type_3 .horizontal ul.megamenu > li.active > a:after, .type_3 .horizontal ul.megamenu > li.home > a:after, .type_3 .horizontal ul.megamenu > li:hover > a:after {
+      background-color: #F4A137; }
+  .type_3 .horizontal ul.megamenu .megamenu--container {
+    left: 0; } }
+@media (min-width: 767px) {
+  .type_3 div.so-vertical-menu .vertical-wrapper {
+    position: static; } }
+
+/*# sourceMappingURL=header3.css.map */

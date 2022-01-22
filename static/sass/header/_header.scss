@@ -1,0 +1,73 @@
+/**************************************************************
+	Style  Header 1
+**************************************************************/
+.type_1{
+    .header-top-right ul.top-link > li{
+        &.account{background: $background1; border-#{$left}: 1px solid $linkColor;}
+        &:hover{background: $background1;}
+    }
+    #sosearchpro .button-search{
+        &:hover{background: $background1; border-color:$background1;}
+    }
+}
+
+
+/**************************************************************
+	Style  Header 2 
+**************************************************************/
+.type_2{
+    .header-top-right ul.top-link > li{
+        &:hover{background: $background1;}
+    }
+    .horizontal ul.megamenu > li.active > a,
+    .horizontal ul.megamenu > li.home > a,
+    .horizontal ul.megamenu > li:hover > a {
+        background: $background1;
+        color: $white;
+    }
+    #sosearchpro .button-search{background: $background1; }
+
+}
+
+/**************************************************************
+	Style  Header  3
+**************************************************************/
+.type_3{
+    .header-top-right ul.top-link > li{
+        &:hover{background: $background1;}
+    }
+    .horizontal ul.megamenu > li.active > a,
+    .horizontal ul.megamenu > li.home > a,
+    .horizontal ul.megamenu > li:hover > a {
+        background: $background1;
+        color: $white;
+    }
+    #sosearchpro .button-search{
+        i{font-size: 18px; color: $linkColor; }
+        &:hover{background: $background1; 
+            i{color: #fff;}
+        }
+    }
+
+}
+
+/**************************************************************
+	Style  Header  4
+**************************************************************/
+
+.type_4{
+    .header-top-right ul.top-link > li{
+        &:hover{background: $background1;}
+    }
+    .horizontal ul.megamenu > li.active > a,
+    .horizontal ul.megamenu > li.home > a,
+    .horizontal ul.megamenu > li:hover > a {
+        background: $background1;
+        color: $white;
+    }
+    .wishlist-block a:hover{background: $background1; color: #fff;}
+    #sosearchpro .button-search{background: $background1; }
+    .shopping_cart a.top_cart{background: $background1;
+        &:hover{background: darken($background1, 10%)}    
+    }
+}

@@ -1,0 +1,82 @@
+.type_4{
+    //--- BLOCK HEADER -------------------
+    .header-top{background:transparent;border-bottom: 1px solid #eee; }
+    .header-bottom{background: #666;margin-bottom: 30px;}
+    .header-center{padding: 25px 0;}
+    .header-top-left{padding: 5px 0;}
+    .header-top-right {display: inline-block;
+        ul.top-link{list-style: none;margin:0; vertical-align:top;
+            > li{display: inline-block; position: relative;float: left;list-style: outside none none;height: 34px; line-height: 34px;
+             >	a {display: block;line-height: 15px; padding: side-values(0 10px 0 20px); position: relative; height: 34px; line-height: 34px; color: $textBody; font-size: 12px;
+                 &:before{background-image: url("#{$base-url-theme}/icons/ico-quicklink.png"); background-repeat: no-repeat;background-position: center -26px; content: ""; height: 16px; #{$left}: 0;position: absolute;top: 10px;width: 18px; @include transition(all 0.3s ease-in-out 0s); }
+                }
+                &.wishlist{
+                    a:before{background-position: center -79px;}
+                }
+                &.checkout{
+                    a:before{background-position: center -139px;}
+                }
+                &.login{
+                    a:before{background-position: center -196px;}
+                }
+                &:hover{background: $background1;
+                    > a{color: #fff;}
+                    &.account a:before{background-position: center 1px;}
+                    &.wishlist{
+                    a:before{background-position: center -53px;}
+                    }
+                    &.checkout{
+                    a:before{background-position: center -109px}
+                    }
+                    &.login{
+                        a:before{background-position: center -168px;}
+                    }
+                }
+                
+            }
+        }
+    }
+    
+    .wishlist-block{
+        li{padding: 0 2px;}
+        a{color: $textBody; display: block;  background: #eee;border-radius: 3px;width: 36px; height: 30px; text-align: center;line-height: 30px; 
+            &:hover{background: $background1; color: #fff;}
+        }
+    }
+    
+    
+    .languages-block, .currencies-block{ border: 1px solid #eee;background: #eee;margin:  0 2px;border-radius: 3px; z-index: 65;
+        form > a{line-height: 24px;}
+    }
+    //---------------BLOCK CART -------------------------
+    .shopping_cart{ padding: 0 15px;
+        .btn-group{display: block;width: auto;}
+        a.top_cart{display: block; position: relative; background: $background1; border-radius: 3px !important; border-bottom: 2px solid rgba(0,0,0,0.2);margin-top: 8px; padding:1px 10px; overflow: hidden;
+           .shopcart{ display: block; overflow: hidden;
+              .title{padding-right: 6px;font-weight: normal; text-transform: none; color: white;}
+              .text-shopping-cart{display: inline-block;line-height: 32px; margin: 0; color: white;}
+           }
+           .handle{width: 36px; height: 32px;margin: 0; margin-right: 10px;}
+           &:hover{background: darken($background1, 10%)}
+        }
+    }
+
+    //--------------- MODULE SEARCH ------------
+    #sosearchpro{ padding: 7px 0;
+        .select_category{
+            width: 140px;
+            vertical-align: middle;
+            border: 1px solid #e5e5e5;
+            background: #fff;
+            display: table-cell;
+            position: relative;z-index: 1;
+            select{ border: none; background: transparent; padding: 5px 10px;}
+        }
+        //.icon-select:after{font-family: $FontAwesome;content: "\f107"; margin: 6px; background: #fff; font-size: 14px; position: absolute;top: 0; right: 0;color: black;}
+        .form-control{border: 1px solid #e5e5e5;border-left: none; border-right: none; box-shadow: none; min-height: 36px;}
+        .button-search{height: 36px; background: #aaaaaa; border: 0px solid #e5e5e5; border-#{$left}: none;box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.2) inset; border-radius: 0 3px 3px 0;
+            i{font-size: 18px; color: white; }
+            &:hover{background: $background1; }
+        }
+    }
+}

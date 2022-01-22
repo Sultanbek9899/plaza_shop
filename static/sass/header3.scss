@@ -1,0 +1,133 @@
+/*******************************************
+*	Theme Name: Market
+*	Author: Magentech
+*	Author URI: http://www.magentech.com
+*	Version: 1.0.0
+*	Description: This is html5 Sass template 
+*******************************************/
+
+// Override default value for $dir in directional.scss
+$dir: lrt;
+
+//** simple and lightweight mixin library for Sass **
+//-- url : http://bourbon.io/docs ---
+@import 'bourbon/bourbon';
+
+//** Mixins for Rem Font Sizing **
+//-- url : http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/
+@import 'directional/rem';
+
+//** Variables for responsive design in bootstrap with sass **
+//-- url : https://gist.github.com/webinfinita/11407836
+@import 'directional/bootstrap_breakpoints';
+
+//** Makes supporting both left-to-right (LTR) and right-to-left (RTL) easy.**
+//-- url : https://github.com/tysonmatanich/directional-scss
+@import 'directional/directional';
+
+//Mixins Utilities & Variables
+@import 'variables/utilities';
+@import "variables/orange";
+
+/**************************************************************
+	  BLOCK HEADER 
+**************************************************************/
+
+.type_3{
+    //--- BLOCK HEADER -------------------
+    .header-bottom{border-top: 1px solid #ddd;border-bottom: 1px solid #ddd;box-shadow: 4px 4px 4px #ddd;margin-bottom: 30px;}
+    .header-top-right {display: inline-block;
+        ul.top-link{list-style: none;margin:0; vertical-align:top;
+            > li{display: inline-block; position: relative;float: left;list-style: outside none none;height: 34px; line-height: 34px;
+             >	a {display: block;line-height: 15px; padding: side-values(0 10px 0 20px); position: relative; height: 34px; line-height: 34px; color: $textBody; font-size: 12px;
+                 &:before{background-image: url("#{$base-url-theme}/icons/ico-quicklink.png"); background-repeat: no-repeat;background-position: center -26px; content: ""; height: 16px; #{$left}: 0;position: absolute;top: 10px;width: 18px; @include transition(all 0.3s ease-in-out 0s); }
+                }
+                &.wishlist{
+                    a:before{background-position: center -79px;}
+                }
+                &.checkout{
+                    a:before{background-position: center -139px;}
+                }
+                &.login{
+                    a:before{background-position: center -196px;}
+                }
+                &:hover{
+                    > a{color: #fff;}
+                    &.account a:before{background-position: center 1px;}
+                    &.wishlist{
+                    a:before{background-position: center -53px;}
+                    }
+                    &.checkout{
+                    a:before{background-position: center -109px}
+                    }
+                    &.login{
+                        a:before{background-position: center -168px;}
+                    }
+                }
+               
+                &.account:hover  {
+                    ul.dropdown-link {top: 34px; z-index: 9999; opacity: 1; border-top: 1px solid rgba(200, 199, 199, 0.3);}
+                }
+            }
+        }
+    }
+    .header-top-left .navbar-welcome{padding: 5px 0;margin-bottom: 0;}
+    .header-top .languages-block, .header-top .currencies-block{margin: 5px 0; border: 1px solid #d2d2d2;}
+    .header-top .languages-block form > a, .header-top .currencies-block form > a{line-height: 20px;}
+    
+    //-----Block Number Phone -----------
+    .phone-contact {
+        @include breakpoint(lg){padding: 0  ; }
+        .inner-info{
+             @include breakpoint(lg){
+                border-#{$right}: 1px solid #ddd;
+            }
+            padding-#{$left}: 45px;
+            background: url("#{$base-url-theme}/home3/ico-phone.png") $left top no-repeat;
+            background-position: $left 5px;
+            
+        }
+    }
+    
+    //--------------- MODULE SEARCH ------------
+    #sosearchpro{ width: auto; padding: 5px 0;
+        .select_category{
+            width: 140px;
+            vertical-align: middle;
+            border: 1px solid #e5e5e5;
+            background: #fff;
+            display: table-cell;
+            position: relative;z-index: 1;
+            select{ border: none; background-color: transparent; padding: 5px 10px; cursor: pointer;}
+        }
+        .form-control{border: 1px solid #e5e5e5;border-left: none; border-right: none; box-shadow: none; min-height: 36px;}
+        .button-search{height: 36px; background: #fff; border: 1px solid #e5e5e5; border-#{$left}: none; }
+    }
+
+    // BLOCK MENU ------------------------
+    @media (min-width: 992px) {
+        .horizontal{
+            .navbar-default{background-color: transparent; border-color: transparent;
+                .megamenu-wrapper{background: transparent;}
+            }
+
+            ul.megamenu {
+                    > li{
+                    > a{color: #fff;font-size: 14px; height: auto; padding: 0 15px; line-height: 48px; text-transform: uppercase; text-shadow: none; 
+                        &:after{position: absolute; content: ""; width: 1px; height: 20px;background-color: #888;right: 0;top: 50%;margin-top: -10px;}
+                    }
+                      
+                } 
+                 > li > a:hover, > li.active > a, > li.home > a, > li:hover > a{background: $background1; color: #fff;
+                        &:after{background-color: $linkColor;}
+                    }
+                 
+			 .megamenu--container{#{$left}:0;}
+            } 
+        }
+    }
+    @media (min-width: 767px) {
+        div.so-vertical-menu .vertical-wrapper{position: static;}
+    }
+}
+

@@ -1,0 +1,112 @@
+
+/**************************************************************
+		HTML Content
+**************************************************************/
+
+
+//----------------Block-1 ---------
+.policy-v3{margin: 0 -15px 30px -15px;
+	.block-policy-v3{overflow: hidden;
+		.policy{
+			.policy-inner{border: 3px solid #ddd;padding: 20px 28px;text-transform: capitalize;}
+			span{float: $left; text-indent: -999em; margin-#{$right}: 10px;background-repeat: no-repeat;}
+			h2{font-size: 116.6%;font-weight: bold;text-transform: uppercase;color: #444; margin: 0;}
+			a{color: #999;}
+			&.policy1{
+				span{background-image: url('#{$base-url-theme}icons/ico-money.png'); width: 27px;height: 36px;}
+				.policy-inner:hover{border-color: $linkColor;}
+			} 
+			&.policy2{
+				.policy-inner:hover{border-color: $linkColor;}
+				span{background-image: url('#{$base-url-theme}icons/ico-freeship.png');width: 53px;height: 32px;}
+			} 
+			&.policy3{
+				.policy-inner:hover{border-color: $linkColor;}
+				span{background-image: url('#{$base-url-theme}icons/ico-celander.png');width: 33px;height: 34px;}
+			} 
+			&.policy4{
+				.policy-inner:hover{border-color: $linkColor;}
+				span{background-image: url('#{$base-url-theme}icons/ico-umbrella.png');width: 34px; height: 34px;}
+			} 
+		} 
+		 
+	}
+} 
+
+
+//------------CLIENT SAY------------
+.block-clientsay {
+    .item{ border: 1px solid #ddd; padding: 15px 20px;
+	   .client-info{ border-top: 1px solid #ddd; margin-top: 15px; padding-top: 20px;
+		  strong{font-size: 116.6%; text-transform: uppercase; font-weight: bold; color: #444;}
+		  img{float: left; margin-right: 10px;width: auto;}
+	   }
+    }
+    .owl2-nav{position: absolute; top: -45px;width: 100%;
+        div{width: 20px; height: 27px; border: 1px solid #dfdfdf;border-radius: 0; font-size: 0; background-color: transparent; @include transition (all 0.3s ease-in-out 0s);
+            &.owl2-prev{background: url('#{$base-url-theme}icons/next-prev-detail.png') no-repeat; background-position: -41px 0px;position: relative; #{$right}: 30px;float: $right;background-color: #fff;
+                &:hover{border-color: $linkColor;background-color: $background1; background-position: -4px 0px; opacity: 1;}
+                
+            }
+            &.owl2-next{background: url('#{$base-url-theme}icons/next-prev-detail.png') no-repeat; background-position: -76px 0px; position: relative; #{$right}: -18px;float: $right;background-color: #fff;
+                &:hover{border-color: $linkColor;background-color: $background1; background-position: -112px 0px; opacity: 1;}
+           
+            }
+        }
+        
+    }
+}
+
+/*----------------LISTING TABS -----------------------*/
+div.tab-slider{margin: 0;position: relative; z-index: 1;
+	h3.modtitle {position: absolute;top: 5px;}
+	.so-listing-tabs{margin: 0 ; vertical-align: top;
+		.ltabs-wrap,.ltabs-items-container .ltabs-items-inner,.ltabs-wrap .ltabs-items-container,
+		.ltabs-items-container .ltabs-items{overflow: visible;}
+		.ltabs-wrap .ltabs-tabs-container{margin: 0 0 5px 0; overflow: visible;}
+		.ltabs-tabs-container .ltabs-tabs-wrap{height: 36px;border-bottom: 1px solid #ddd;
+			.ltabs-tabs{float: $right;margin-#{$right}: 80px;
+				li{border: 0; margin: 0; padding: 0;
+					span{padding: 0 12px;}
+					&:hover{background: transparent; border-bottom: 0;
+						span{color: $linkColor;}
+					}
+			&.tab-sel{ background-color: white;border-#{$left}: 1px solid #ddd; border-bottom: 1px solid white;
+						margin-top: 1px; padding-bottom: 1px;margin-bottom: 0px;border-#{$right}: 1px solid #ddd;border-top: 3px solid $linkColor;;
+							span{color: $linkColor;}
+							
+						}
+				}	
+			}
+		}
+		.owl2-controls{width: 100%;position: absolute; top: -23px;
+			.owl2-nav .owl2-prev,
+			.owl2-nav .owl2-next{
+				width: 20px;height: 27px; border: 1px solid #ddd;background-image: url('#{$base-url-theme}/icons/ico-slider.png'); background-repeat: no-repeat;
+				background-color: #fff; display: inline-block; text-indent: -999em;background-position: -31px 0; position: absolute;  transition: all 0.2s ease-in-out 0s; #{$left}: inherit;
+				@include if-ltr {#{$right}: 25px;}
+				@include if-rtl { #{$right}: 0px;}
+				&:hover{background-color: $background1; background-position: 0px 0; border-color: $linkColor;}
+				&:before{display: none;}
+			}
+			.owl2-nav .owl2-next{
+				background-position: -60px 0;
+				
+				@include if-ltr {#{$right}: 0px;}
+				@include if-rtl { #{$right}: 25px;}
+			
+				&:hover{ background-position: -90px 0;}
+			}
+		} 
+	}
+	.ltabs-items-container .ltabs-items{
+		@extend .products-list;
+	}
+}
+
+/*----------------DEAL PRODUCT -----------------------*/
+div.so-deal{
+	.extraslider-inner{@extend .products-list;
+		.product-item-container{margin: 0 !important;}
+	}
+}

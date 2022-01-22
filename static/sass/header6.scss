@@ -1,0 +1,119 @@
+/*******************************************
+*	Theme Name: Market
+*	Author: Magentech
+*	Author URI: http://www.magentech.com
+*	Version: 1.0.0
+*	Description: This is html5 Sass template 
+*******************************************/
+
+// Override default value for $dir in directional.scss
+$dir: ltr;
+
+//** simple and lightweight mixin library for Sass **
+//-- url : http://bourbon.io/docs ---
+@import 'bourbon/bourbon';
+
+//** Mixins for Rem Font Sizing **
+//-- url : http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/
+@import 'directional/rem';
+
+//** Variables for responsive design in bootstrap with sass **
+//-- url : https://gist.github.com/webinfinita/11407836
+@import 'directional/bootstrap_breakpoints';
+
+//** Makes supporting both left-to-right (LTR) and right-to-left (RTL) easy.**
+//-- url : https://github.com/tysonmatanich/directional-scss
+@import 'directional/directional';
+
+//Mixins Utilities & Variables
+@import 'variables/utilities';
+@import "variables/orange";
+
+/**************************************************************
+	  BLOCK HEADER 
+**************************************************************/
+
+.type_6{     background-color: #232f3e;
+    //--- BLOCK HEADER -------------------
+	   .header-top{ background:transparent;   border-bottom: 1px solid #303e4f;
+			 .languages-block,.currencies-block{margin: 0; border: none;
+				 form:hover{background:transparent;}
+				 a.btn {@include linkColor(#bcbdc7,$white); padding: 2px 10px;}
+			 }
+	   }
+	   .header-center {padding: 25px 0 20px;    border-bottom: 1px solid #303e4f; }
+	   .header-bottom{background:transparent;margin-bottom: 0;}
+	
+	   .header-top-right {display: inline-block;
+			 ul.top-link{list-style: none;margin:6px 0;
+				> li{display: inline-block;list-style: outside none;  vertical-align:middle;
+				  >	a {display: block; font-size: 12px;@include linkColor(#bcbdc7,$white);}
+				    .fa{margin-#{$right}:5px;font-size: 14px;}
+				}
+			 }
+		
+	   }
+	   
+
+	   //-----Block Number Phone -----------
+	   .phone-contact {color: $white;
+		  @include breakpoint(lg){padding: 0 ; }
+		  .inner-info{
+			 text-transform: uppercase;
+			 padding-#{$left}: 45px;
+			 background: url("#{$base-url-theme}/home6/icon-phone.png") $left top no-repeat;
+			 background-position: $left 5px;
+			 
+		  }
+	   }
+	   
+	   //-----Block Shopping Cart  -----------
+	   .shopping_cart{ padding: 0 15px;
+			  a.top_cart { display: inline-block;
+				    .shopcart .title{color: $white;}
+				    .shopcart .text-shopping-cart{color: $white; }		
+			 }
+	   }
+	   //---------------BLOCK SEARCH PRO  -------------------------
+	   #sosearchpro {margin-top:4px; padding-#{$right}:30px;
+		  .select_category {
+			 vertical-align: middle;
+			 background: $white;
+			 border-radius: corner-values(20px 0 0 20px);
+			 display: table-cell;
+			 max-width: 130px;
+			 position: relative;z-index: 1;
+			 select{ border: none; background-color: transparent; padding: 5px 10px; cursor: pointer;}
+		  }
+		  .form-control{border: 1px solid #e5e5e5; box-shadow: none; min-height: 40px;}
+		  .button-search{@include buttonColor; padding: 9px 12px;border-radius:corner-values(0 20px 20px 0);min-width: 54px;}
+	   }
+	
+	   // BLOCK MENU ------------------------
+	   @media (min-width: 992px) {
+			 .vertical {
+				    .megamenuToogle-wrapper{background: transparent;
+						  .container{padding: 12px;font-size: 14px;text-transform: uppercase;font-weight: 600;}
+				    }
+			 }
+		  .horizontal{
+			 .navbar-default{background-color: transparent; border-color: transparent;
+				.megamenu-wrapper{background: transparent;}
+			 }
+			 ul.megamenu {
+				    .label-hot{    position: absolute; z-index: 2;top: -10px; #{$right}: 0px;}
+				    > li{
+					    > a{color: #bcbdc7;font-size: 14px; height: auto; padding: 5px 10px; line-height: 36px;text-shadow: none;}
+					    strong{font-weight: normal;}
+					    &.home ,&.active , &:hover{
+						    a {background:transparent;color:$white;}					
+					    }
+					    
+					    .sub-menu a{@include linkGray;}
+				    }
+				    
+			  
+			 } 
+		  }
+	   }
+}

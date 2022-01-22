@@ -1,0 +1,126 @@
+/*******************************************
+*	Theme Name: Market
+*	Author: Magentech
+*	Author URI: http://www.magentech.com
+*	Version: 1.0.0
+*	Description: This is html5 Sass template 
+*******************************************/
+
+// Override default value for $dir in directional.scss
+$dir: ltr;
+
+//** simple and lightweight mixin library for Sass **
+//-- url : http://bourbon.io/docs ---
+@import 'bourbon/bourbon';
+
+//** Mixins for Rem Font Sizing **
+//-- url : http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/
+@import 'directional/rem';
+
+//** Variables for responsive design in bootstrap with sass **
+//-- url : https://gist.github.com/webinfinita/11407836
+@import 'directional/bootstrap_breakpoints';
+
+//** Makes supporting both left-to-right (LTR) and right-to-left (RTL) easy.**
+//-- url : https://github.com/tysonmatanich/directional-scss
+@import 'directional/directional';
+
+//Mixins Utilities & Variables
+@import 'variables/utilities';
+@import "variables/orange";
+
+/**************************************************************
+	  BLOCK HEADER 
+**************************************************************/
+.topbar{background: $gray-base;}
+
+//----------------Block-Policy ---------
+.block-policy-top{overflow: hidden;
+	.policy{
+		.policy-inner{padding: 16px 0;color:$input-color-placeholder;text-transform: capitalize;min-width: 230px;display: table; margin: 0 auto; text-align: center;
+			@include breakpoint(lg){
+				&:after { content:""; height: 40px;width: 1px;background: #333;position: absolute;z-index: 2;right: 0;top: 15px;}
+			}
+		}
+		&:last-child .policy-inner:after{display: none;}
+		.ico-policy{ float: $left;  margin-#{$right}: 10px;background-repeat: no-repeat; background-image: url('#{$base-url-theme}icons/icon-image.png');}
+		h4{font-size: 116.6%;font-weight: bold;text-transform: uppercase; color: #fff; margin: 0;}
+		&.policy1 .ico-policy{background-position: -130px -315px; width: 34px;height: 36px;}
+		&.policy2 .ico-policy{background-position: -185px -315px; width: 47px;height: 36px;}
+		&.policy3 .ico-policy{background-position: -260px -315px; width: 34px;height: 36px;}
+		 
+		
+	} 
+	 
+}
+
+.type_5{ padding: 0 15px !important;
+    //--- BLOCK HEADER -------------------
+	.header-top{background:transparent;
+		.languages-block,.currencies-block{margin: 0; border: none;
+			form:hover{background:transparent;}
+			a {@include linkGrayDark();}
+		}
+		.btn-shopping-cart ul.dropdown-menu{min-width: 320px;}
+	}
+     .header-center {padding: 8px 0 25px;}
+	.header-bottom{background:transparent;margin-bottom: 0;min-height: auto;}
+
+
+	.navbar-logo{text-align: center;}
+	.shopping_cart .shoppingcart-box:before{#{$right}: 10px;}
+     .header-top-right {display: inline-block;
+        ul.top-link{list-style: none;margin:0;
+            > li{display: inline-block;list-style: outside none;  vertical-align:middle;
+             >	a {display: block; font-size: 12px; @include linkGray();}
+	.fa{margin-#{$right}:5px;font-size: 14px;}
+            }
+        }
+		.shopping_cart a.top_cart { display: inline-block;
+			.handle{margin: 0; width:45px;height: 36px;background-color: $gray-base; background-position: 13px 9px;}
+			.text-shopping-cart{
+				position: absolute;
+				right: -12px;
+				top: -12px;
+				color:white;
+				background-color: #29beff;
+				width: 24px;
+				height: 24px;
+				border-radius: 50%;
+				text-align: center;
+			}		
+		}
+    }
+    .header-bottom-right {
+        padding: 0;margin-#{$left}: -15px;
+    }
+
+    
+    //---------------BLOCK SEARCH PRO  -------------------------
+    #sosearchpro {
+        .form-control{border: 1px solid #e5e5e5; box-shadow: none; border-radius: corner-values(15px 0 0 15px);}
+        .button-search{@include buttonColor; border-radius: corner-values(0 15px 15px 0); padding: 6px 12px;}
+    }
+	
+	// BLOCK MENU ------------------------
+    @media (min-width: 992px) {
+        .horizontal{
+            .navbar-default{background-color: transparent; border-color: transparent;
+                .megamenu-wrapper{background: transparent;}
+            }
+            ul.megamenu {
+                    > li{
+                         > a{color: #333;font-size: 14px; height: auto; padding: 0px 10px; line-height: 30px; text-transform: uppercase; text-shadow: none;}
+					strong{font-weight: 600;}
+					&.home ,&.active , &:hover{
+						a {background:transparent;color:$linkColor;}					
+					}
+					
+					.sub-menu a{@include linkGray;}
+                    }
+				
+             
+            } 
+        }
+    }
+}

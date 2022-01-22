@@ -1,0 +1,228 @@
+/*******************************************
+*	Theme Name: Market
+*	Author: Magentech
+*	Author URI: http://www.magentech.com
+*	Version: 1.0.0
+*	Description: This is html5 Sass template 
+*******************************************/
+/*===============================================
+	[SASS DIRECTORY ]
+	
+    [1] Minxin Link
+    [2] Minxin Buton
+    [3] Minxin Triangle
+   
+==============================================*/
+.no-margin {
+  margin: 0 !important; }
+
+.marginbottom__3x {
+  margin-bottom: 30px; }
+
+@-webkit-keyframes animLoadedLogo {
+  to {
+    -webkit-transform: translate3d(0, 100%, 0) translate3d(0, 50px, 0) scale3d(0.65, 0.65, 1); } }
+@keyframes animLoadedLogo {
+  to {
+    -webkit-transform: translate3d(0, 100%, 0) translate3d(0, 50px, 0) scale3d(0.65, 0.65, 1);
+    transform: translate3d(0, 100%, 0) translate3d(0, 50px, 0) scale3d(0.65, 0.65, 1); } }
+@-webkit-keyframes animLoadedLoader {
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0) scale3d(0.3, 0.3, 1); } }
+@keyframes animLoadedLoader {
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0) scale3d(0.3, 0.3, 1);
+    transform: translate3d(0, -100%, 0) scale3d(0.3, 0.3, 1); } }
+@-webkit-keyframes animLoadedHeader {
+  to {
+    -webkit-transform: translate3d(0, -100%, 0); } }
+@keyframes animLoadedHeader {
+  to {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0); } }
+@-webkit-keyframes animInitialHeader {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 800px, 0); } }
+@keyframes animInitialHeader {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 800px, 0);
+    transform: translate3d(0, 800px, 0); } }
+/*******************************************************
+  Style Color
+********************************************************/
+/**************************************************************
+	  Footer Wrapper
+**************************************************************/
+.footer-container {
+  padding: 0;
+  background-color: #000;
+  color: #fff; }
+
+.footer-lines {
+  border-top: 1px solid #1a1a1a;
+  margin: 0 15px 30px 15px;
+  clear: both;
+  width: calc(100% - 30px); }
+
+.footer-top {
+  border-bottom: 1px solid #1a1a1a; }
+  .footer-top .module {
+    margin: 0; }
+
+.footer-center {
+  padding: 40px 0 0; }
+  .footer-center .icons-social {
+    margin: 0 auto 30px;
+    display: table; }
+    .footer-center .icons-social .modtitle {
+      padding: 0 20px; }
+  .footer-center .module h3.modtitle {
+    /* [4] */
+    /* [6] */
+    /* [6] */
+    /* [7] */
+    font-size: 16px;
+    /* [8] */
+    font-size: 1.6rem;
+    /* [8] */
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #fff; }
+  .footer-center .module ul.menu li > a {
+    position: relative;
+    padding: 5px 0 5px 0px;
+    display: block; }
+    .footer-center .module ul.menu li > a:before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 15px;
+      height: 1px;
+      width: 0px;
+      background-color: #e4e4e4;
+      -webkit-transition: all 0.2s ease;
+      -moz-transition: all 0.2s ease;
+      transition: all 0.2s ease; }
+    .footer-center .module ul.menu li > a:hover {
+      padding-left: 12px; }
+
+.block-policy-top {
+  overflow: hidden; }
+  .block-policy-top .policy .policy-inner {
+    padding: 16px 0;
+    color: #999;
+    text-transform: capitalize;
+    min-width: 230px;
+    display: table;
+    margin: 0 auto;
+    text-align: center; }
+    @media (min-width: 1200px) {
+      .block-policy-top .policy .policy-inner:after {
+        content: "";
+        height: 40px;
+        width: 1px;
+        background: #333;
+        position: absolute;
+        z-index: 2;
+        right: 0;
+        top: 15px; } }
+  .block-policy-top .policy:last-child .policy-inner:after {
+    display: none; }
+  .block-policy-top .policy .ico-policy {
+    float: left;
+    margin-right: 10px;
+    background-repeat: no-repeat;
+    background-image: url("../image/theme/icons/icon-image.png"); }
+  .block-policy-top .policy h4 {
+    font-size: 116.6%;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    margin: 0; }
+  .block-policy-top .policy.policy1 .ico-policy {
+    background-position: -130px -315px;
+    width: 34px;
+    height: 36px; }
+  .block-policy-top .policy.policy2 .ico-policy {
+    background-position: -185px -315px;
+    width: 47px;
+    height: 36px; }
+  .block-policy-top .policy.policy3 .ico-policy {
+    background-position: -260px -315px;
+    width: 34px;
+    height: 36px; }
+
+div.subscribe-home input.form-control {
+  min-height: 40px;
+  color: #999;
+  border-radius: 40px;
+  padding: 6px 20px;
+  min-width: 400px;
+  border: none;
+  box-shadow: none; }
+div.subscribe-home .btn {
+  padding: 7px 12px;
+  background: #555555;
+  color: #fff;
+  border-radius: 0;
+  border-color: #555555;
+  background: #F4A137;
+  border-color: #F4A137;
+  min-height: 40px;
+  border-radius: 40px;
+  text-transform: uppercase;
+  padding: 6px 20px;
+  font-size: 12px; }
+  div.subscribe-home .btn:hover {
+    background: #F4A137;
+    border-color: #F4A137;
+    color: #fff; }
+  div.subscribe-home .btn:hover {
+    background: #555555;
+    border-color: #555555; }
+
+.contact-address li {
+  color: #bcbdc7;
+  padding: 0 0 5px 41px;
+  position: relative;
+  z-index: 1;
+  line-height: 18px;
+  min-height: 40px; }
+.contact-address span {
+  /* [4] */
+  /* [6] */
+  /* [6] */
+  /* [7] */
+  font-size: 18px;
+  /* [8] */
+  font-size: 1.8rem;
+  /* [8] */
+  left: 0px;
+  position: absolute;
+  background-color: #4b5056;
+  top: 4px;
+  color: white;
+  border-radius: 2px;
+  width: 30px;
+  line-height: 30px;
+  text-align: center; }
+.contact-address > li:nth-child(2) {
+  padding-top: 7px; }
+  .contact-address > li:nth-child(2) span {
+    margin-top: -1px; }
+.contact-address > li:last-child {
+  padding-top: 8px; }
+  .contact-address > li:last-child span {
+    margin-top: 7px; }
+
+.footer-bottom-block {
+  padding: 10px 0; }
+  .footer-bottom-block .payment-footer img {
+    margin: 0 3px; }
+
+/*# sourceMappingURL=footer5.css.map */

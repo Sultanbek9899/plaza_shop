@@ -1,0 +1,89 @@
+/*******************************************
+*	Theme Name: Market
+*	Author: Magentech
+*	Author URI: http://www.magentech.com
+*	Version: 1.0.0
+*	Description: This is html5 Sass template 
+*******************************************/
+
+// Override default value for $dir in directional.scss
+$dir: lrt;
+
+//** simple and lightweight mixin library for Sass **
+//-- url : http://bourbon.io/docs ---
+@import 'bourbon/bourbon';
+
+//** Mixins for Rem Font Sizing **
+//-- url : http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/
+@import 'directional/rem';
+
+//** Variables for responsive design in bootstrap with sass **
+//-- url : https://gist.github.com/webinfinita/11407836
+@import 'directional/bootstrap_breakpoints';
+
+//** Makes supporting both left-to-right (LTR) and right-to-left (RTL) easy.**
+//-- url : https://github.com/tysonmatanich/directional-scss
+@import 'directional/directional';
+
+//Mixins Utilities & Variables
+@import 'variables/utilities';
+@import "variables/orange";
+
+/**************************************************************
+	  Footer Wrapper
+**************************************************************/
+.footer-container{background-color: #dddddd; padding: 34px 0 0;}
+
+.footer-top{
+	.footer-lines{color: #E4E4E4;margin-top: 0;
+		  &:before{content:""; display: block; border-top: 1px solid #ccc;}
+	}
+	.module{
+		h3.modtitle{@include rem(font-size, 14px);}
+		ul.menu li > a:before{
+		@include if-ltr { content: "\f101";}
+		@include if-rtl { content: "\f100";}
+		font-family: $FontAwesome;margin-#{$right}: 5px; display: inline-block;}
+	}
+    
+}
+
+.contact-address{
+	li{color: #444444;padding:side-values(0 0 5px 41px);position: relative;z-index: 1;line-height: 18px;min-height: 40px;}
+		span{
+			@include rem(font-size, 18px);#{$left}: 0px;position: absolute;background-color: #969696;top: 4px;color: white;border-radius: 2px;width: 30px; line-height: 30px; text-align: center;
+		}
+	> li:nth-child(2) {padding-top: 7px;
+		span{margin-top: -1px;}
+	}
+	> li:last-child{padding-top: 8px;
+		span{margin-top: 7px;}
+	}
+    
+}
+
+
+.footer-bottom-block {background: #444; color: #fff;padding: 8px 0;
+    .payment-footer img{margin:0 3px;}
+}
+
+//--- Footer Link -------------------
+
+ul.footer-directory{
+	list-style: outside none none;
+	padding: 0;
+	margin: 0;
+	li{
+		padding-bottom: 2px;
+		h4{
+			    color: $gray-dark;
+			     display: inline-block;
+			     font-weight: bold;
+			     line-height: 22px;
+			     text-transform: uppercase;
+			     @include rem(font-size, 11px);
+			     margin: side-values(0 5px 0 0);
+		}
+		    
+	}
+}

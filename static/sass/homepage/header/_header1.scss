@@ -1,0 +1,81 @@
+.type_1{
+    //--- BLOCK HEADER -------------------
+    .header-top-right {display: inline-block; 
+        ul.top-link{list-style: none;margin:0;vertical-align:top;
+            > li{display: inline-block; position: relative;border-#{$right}: 1px solid $list-group-border;float: left;list-style: outside none none;height: 34px; line-height: 34px;
+                >	a {display: block;line-height: 15px; padding: 0 10px; position: relative; height: 34px; line-height: 34px; width: 12px; font-size: 0;
+                    &:before{background-image: url("#{$base-url-theme}/icons/ico-quicklink.png"); background-repeat: no-repeat; content: ""; height: 16px;#{$left}: 0;position: absolute;top: 10px;width: 18px; @include transition(all 0.3s ease-in-out 0s); }
+                }
+                &.account{background: $background1; border-#{$left}: 1px solid $linkColor;
+                    >a{color: #fff; padding-#{$left}: 20px; padding-#{$right}: 0px; text-indent: inherit;  width: auto; @include rem(font-size, 12px); line-height: 30px;
+                        .fa-angle-down{margin-#{$left}: 5px;}
+                    }
+                    &.inactive{border-color: $list-group-border; background-color: transparent;
+                        a {display: block; padding: 0 10px; position: relative; height: 34px; line-height: 34px; width: 17px; @include rem(font-size, 0px);
+                           &:before{background-image: url("#{$base-url-theme}/icons/ico-quicklink.png"); background-repeat: no-repeat; content: ""; height: 16px;left: 0;position: absolute;top: 10px;width: 18px; @include transition(all 0.3s ease-in-out 0s); background-position: center -26px;}
+                          }
+                        .fa-angle-down{display: none;}
+                    }
+                }
+                 &:hover{
+                    a{width: auto; @include rem(font-size, 12px); padding-#{$left}: 20px;}
+                 }
+    
+                &.wishlist a:before{background-position: center -79px;}
+                
+                &.checkout a:before{background-position: center -139px;}
+                
+                &.login a:before{background-position: center -196px;}
+                
+                &:hover{background: $background1;
+                    > a{color: #fff;}
+                     &.wishlist{
+                           a:before{background-position: center -53px;}
+                     }
+                     &.checkout{
+                           a:before{background-position: center -109px}
+                     }
+                     &.login{
+                        a:before{background-position: center -168px;}
+                     }
+                }
+    
+                &.account:hover  {
+                    ul.dropdown-link {top: 34px; z-index: 9999; opacity: 1; border-top: 1px solid rgba(200, 199, 199, 0.3);}
+                }
+                // Chua do su dung
+                ul.dropdown-link{position: absolute; background: #fff; box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3); $left: 0; opacity: 0;
+                padding: 0px 10px; top: 33px;  transition:top 0.3s ease 0s, opacity 0.3s ease 0s; width: 200px; z-index: -1; text-align: left;
+                    li{display: block; border-#{$left}: 0;
+                    a{border-#{$right}: 0;display: block; padding: 5px 0 4px; border-bottom: solid 1px #efefef; @include rem(font-size, 11px); line-height: 18px; color: $textBody;
+                        &:hover{color: $linkColor;}
+                        &:after{display: none;}
+                    }
+                    
+                    &:last-child a{border-bottom: 0;}
+                    }
+                }
+                
+            }
+        }
+    }
+    .header-bottom-right {
+        padding: 0;margin-#{$left}: -15px;
+    }
+
+    
+    //---------------BLOCK SEARCH PRO  -------------------------
+    #sosearchpro {margin-top:4px;
+        .select_category {
+            vertical-align: middle;
+            border: 1px solid #e5e5e5;
+            background: #eee;
+            display: table-cell;
+            width: 160px;
+            position: relative;z-index: 1;
+            select{ border: none; background: transparent; padding: 5px 10px;}
+         }
+        .form-control{border: 1px solid #e5e5e5; box-shadow: none; min-height: 36px;}
+        .button-search{border-radius: 0;@include buttonGray;}
+    }
+}

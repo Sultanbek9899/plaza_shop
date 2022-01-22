@@ -1,0 +1,12 @@
+@include breakpoint(lg){
+	/*==============HOME 1 =====================*/
+	.container{width:1200px}
+	#yt_header_right .two-block{width:69%;}
+	#yt_header_right .three-block{width:31%;margin: 0;}
+	
+
+	//--- BLOCK SIDEBAR MENU -------------------
+    .common-home .sidebar-menu .vertical.open .vertical-wrapper{display: block !important ;}
+	
+	
+}
