@@ -271,7 +271,7 @@
                             </div>
                             <div class="right-block">
                                 <div class="caption">
-                                    <h4><a href="product.html">{{product.name}}</a></h4>
+                                    <h4><a href="{% url 'product_detail' product.id %}">{{product.name}}</a></h4>
                                     <div class="price">
                                         <span class="price-new">{{product.price}}сом</span>
                                     </div>
