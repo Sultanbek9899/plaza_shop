@@ -4,9 +4,13 @@
 {% block content %}
     <div class="main-container container">
 		<ul class="breadcrumb">
-			<li><a href="#"><i class="fa fa-home"></i></a></li>
-			<li><a href="#">Smartphone & Tablets</a></li>
-			<li><a href="#">Bint Beef</a></li>
+			<li><a href="{% url 'product_list' %}"><i class="fa fa-home"></i></a></li>
+			<li><a href="{% url  'category_list' product.category.slug  %}">
+				{{ product.category }}
+			</a></li>
+			<li><a href="{% url 'subcategory_list' product.category.slug  product.subcategory.slug %}">
+				{{ product.subcategory }}
+			</a></li>
 		</ul>
 
 		<div class="row">
@@ -22,23 +26,8 @@
 									<span class="btn-more next-thumb nt"><i class="fa fa-angle-down"></i></span>
 									<ul class="thumb-vertical">
 										<li class="owl2-item">
-											<a data-index="0" class="img thumbnail" data-image="image/demo/shop/product/J9.jpg" title="Canon EOS 5D">
-												<img src="image/demo/shop/product/J9.jpg" title="Canon EOS 5D" alt="Canon EOS 5D">
-											</a>
-										</li>
-										<li class="owl2-item">
-											<a data-index="1" class="img thumbnail " data-image="image/demo/shop/product/J6.jpg" title="Bint Beef">
-												<img src="image/demo/shop/product/J6.jpg" title="Bint Beef" alt="Bint Beef">
-											</a>
-										</li>
-										<li class="owl2-item">
-											<a data-index="2" class="img thumbnail" data-image="image/demo/shop/product/J5.jpg" title="Bint Beef">
-												<img src="image/demo/shop/product/J5.jpg" title="Bint Beef" alt="Bint Beef">
-											</a>
-										</li>
-										<li class="owl2-item">
-											<a data-index="3" class="img thumbnail" data-image="image/demo/shop/product/J4.jpg" title="Bint Beef">
-												<img src="image/demo/shop/product/J4.jpg" title="Bint Beef" alt="Bint Beef">
+											<a data-index="0" class="img thumbnail" data-image="{{ product.image.url }}" title="Canon EOS 5D">
+												<img src="{{ product.image.url }}" title="Canon EOS 5D" alt="Canon EOS 5D">
 											</a>
 										</li>
 									</ul>
@@ -46,10 +35,8 @@
 
 								</div>
 								<div class="large-image  vertical">
-									<img itemprop="image" class="product-image-zoom" src="image/demo/shop/product/J9.jpg" data-zoom-image="image/demo/shop/product/J9.jpg" title="Bint Beef" alt="Bint Beef">
+									<img itemprop="image" class="product-image-zoom" src="{{product.image.url }}" data-zoom-image="{{ product.image.url }}" title="Bint Beef" alt="Bint Beef">
 								</div>
-								<a class="thumb-video pull-left" href="https://www.youtube.com/watch?v=HhabgvIIXik"><i class="fa fa-youtube-play"></i></a>
-
 							</div>
 
 							<div class="content-product-right col-sm-5 col-xs-12">
@@ -81,48 +68,15 @@
 
 								<div class="product-box-desc">
 									<div class="inner-box-desc">
-										<div class="price-tax"><span>Ex Tax:</span> $60.00</div>
+										<div class="price-tax"><span>Стоимость доставки: </span> 150сом</div>
 										<div class="reward"><span>Price in reward points:</span> 400</div>
-										<div class="brand"><span>Brand:</span><a href="#">Apple</a>		</div>
-										<div class="model"><span>Product Code:</span> Product 15</div>
-										<div class="reward"><span>Reward Points:</span> 100</div>
+										<div class="brand"><span>Категория: </span><a href="#">{{product.category}}</a>		</div>
+										<div class="model"><span>Код продукта: </span> {{ product.id }}</div>
 									</div>
 								</div>
 
 
 								<div id="product">
-									<h4>Available Options</h4>
-									<div class="image_option_type form-group required">
-										<label class="control-label">Colors</label>
-										<ul class="product-options clearfix"id="input-option231">
-											<li class="radio active">
-												<label>
-													<input class="image_radio" type="radio" name="option[231]" value="33"> <img src="image/demo/colors/blue.jpg"
-													data-original-title="blue +$12.00" class="img-thumbnail icon icon-color">				<i class="fa fa-check"></i>
-													<label> </label>
-												</label>
-											</li>
-											<li class="radio">
-												<label>
-													<input class="image_radio" type="radio" name="option[231]" value="34"> <img src="image/demo/colors/brown.jpg"
-													data-original-title="brown -$12.00" class="img-thumbnail icon icon-color">				<i class="fa fa-check"></i>
-													<label> </label>
-												</label>
-											</li>
-											<li class="radio">
-												<label>
-													<input class="image_radio" type="radio" name="option[231]" value="35"> <img src="image/demo/colors/green.jpg"
-													data-original-title="green +$12.00" class="img-thumbnail icon icon-color">				<i class="fa fa-check"></i>
-													<label> </label>
-												</label>
-											</li>
-											<li class="selected-option">
-											</li>
-										</ul>
-									</div>
-
-
-
 									<div class="form-group box-info-product">
 										<div class="option quantity">
 											<div class="input-group quantity-control" unselectable="on" style="-webkit-user-select: none;">
@@ -257,92 +211,26 @@
 				<!-- //Product Tabs -->
 
 				<!-- Related Products -->
-				<div class="related titleLine products-list grid module ">
-	<h3 class="modtitle">Related Products  </h3>
+<div class="related titleLine products-list grid module ">
+	<h3 class="modtitle"> Похожие товары </h3>
 	<div class="releate-products ">
-		<div class="product-layout">
-			<div class="product-item-container">
-				<div class="left-block">
-					<div class="product-image-container second_img ">
-						<img  src="image/demo/shop/product/e11.jpg"  title="Apple Cinema 30&quot;" class="img-responsive" />
-						<img  src="image/demo/shop/product/e12.jpg"  title="Apple Cinema 30&quot;" class="img_0 img-responsive" />
-					</div>
-					<!--Sale Label-->
-					<span class="label label-sale">Sale</span>
-					<!--full quick view block-->
-					<a class="quickview iframe-link visible-lg" data-fancybox-type="iframe"  href="quickview.html">  Quickview</a>
-					<!--end full quick view block-->
-				</div>
-
-
-				<div class="right-block">
-					<div class="caption">
-						<h4><a href="product.html">Apple Cinema 30&quot;</a></h4>
-						<div class="ratings">
-							<div class="rating-box">
-								<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
-								<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
-								<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
-								<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
-								<span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span>
-							</div>
-						</div>
-
-						<div class="price">
-							<span class="price-new">$74.00</span>
-							<span class="price-old">$122.00</span>
-							<span class="label label-percent">-40%</span>
-						</div>
-						<div class="description item-desc hidden">
-							<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut l..</p>
-						</div>
-					</div>
-
-					  <div class="button-group">
-						<button class="addToCart" type="button" data-toggle="tooltip" title="Add to Cart" onclick="cart.add('42', '1');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs">Add to Cart</span></button>
-						<button class="wishlist" type="button" data-toggle="tooltip" title="Add to Wish List" onclick="wishlist.add('42');"><i class="fa fa-heart"></i></button>
-						<button class="compare" type="button" data-toggle="tooltip" title="Compare this Product" onclick="compare.add('42');"><i class="fa fa-exchange"></i></button>
-					  </div>
-				</div><!-- right block -->
-
-			</div>
-		</div>
+		{% for relate_product in related_products %}
 		<div class="product-layout ">
 			<div class="product-item-container">
 				<div class="left-block">
 					<div class="product-image-container second_img ">
-						<img  src="image/demo/shop/product/11.jpg"  title="Apple Cinema 30&quot;" class="img-responsive" />
-						<img  src="image/demo/shop/product/10.jpg"  title="Apple Cinema 30&quot;" class="img_0 img-responsive" />
-
+						<img  src="{{ relate_product.image.url }}"  title="Apple Cinema 30&quot;" class="img_0 img-responsive" />
 					</div>
-					<!--Sale Label-->
-					<span class="label label-sale">Sale</span>
-					<!--full quick view block-->
-					<a class="quickview iframe-link visible-lg" data-fancybox-type="iframe"  href="quickview.html">  Quickview</a>
-					<!--end full quick view block-->
 				</div>
-
 
 				<div class="right-block">
 					<div class="caption">
-						<h4><a href="product.html">Apple Cinema 30&quot;</a></h4>
-						<div class="ratings">
-							<div class="rating-box">
-								<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
-								<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
-								<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
-								<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
-								<span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span>
-							</div>
-						</div>
+						<h4><a href="{% url 'product_detail' relate_product.pk %}">
+							{{ relate_product.name }}
+						</a></h4>
 
 						<div class="price">
-							<span class="price-new">$74.00</span>
-							<span class="price-old">$122.00</span>
-							<span class="label label-percent">-40%</span>
-						</div>
-						<div class="description item-desc hidden">
-							<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut l..</p>
+							<span class="price-new">{{ relate_product.price }}</span>
 						</div>
 					</div>
 
@@ -352,102 +240,8 @@
 						<button class="compare" type="button" data-toggle="tooltip" title="Compare this Product" onclick="compare.add('42');"><i class="fa fa-exchange"></i></button>
 					  </div>
 				</div><!-- right block -->
-
 			</div>
-		</div>
-		<div class="product-layout ">
-			<div class="product-item-container">
-				<div class="left-block">
-					<div class="product-image-container second_img ">
-						<img  src="image/demo/shop/product/35.jpg"  title="Apple Cinema 30&quot;" class="img-responsive" />
-						<img  src="image/demo/shop/product/34.jpg"  title="Apple Cinema 30&quot;" class="img_0 img-responsive" />
-					</div>
-					<!--Sale Label-->
-					<span class="label label-sale">Sale</span>
-					<!--full quick view block-->
-					<a class="quickview iframe-link visible-lg" data-fancybox-type="iframe"  href="quickview.html">  Quickview</a>
-					<!--end full quick view block-->
-				</div>
-
-
-				<div class="right-block">
-					<div class="caption">
-						<h4><a href="product.html">Apple Cinema 30&quot;</a></h4>
-						<div class="ratings">
-							<div class="rating-box">
-								<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
-								<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
-								<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
-								<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
-								<span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span>
-							</div>
-						</div>
-
-						<div class="price">
-							<span class="price-new">$74.00</span>
-							<span class="price-old">$122.00</span>
-							<span class="label label-percent">-40%</span>
-						</div>
-						<div class="description item-desc hidden">
-							<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut l..</p>
-						</div>
-					</div>
-
-					  <div class="button-group">
-						<button class="addToCart" type="button" data-toggle="tooltip" title="Add to Cart" onclick="cart.add('42', '1');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs">Add to Cart</span></button>
-						<button class="wishlist" type="button" data-toggle="tooltip" title="Add to Wish List" onclick="wishlist.add('42');"><i class="fa fa-heart"></i></button>
-						<button class="compare" type="button" data-toggle="tooltip" title="Compare this Product" onclick="compare.add('42');"><i class="fa fa-exchange"></i></button>
-					  </div>
-				</div><!-- right block -->
-
-			</div>
-		</div>
-		<div class="product-layout ">
-			<div class="product-item-container">
-				<div class="left-block">
-					<div class="product-image-container second_img ">
-						<img  src="image/demo/shop/product/14.jpg"  title="Apple Cinema 30&quot;" class="img-responsive" />
-						<img  src="image/demo/shop/product/15.jpg"  title="Apple Cinema 30&quot;" class="img_0 img-responsive" />
-					</div>
-					<!--Sale Label-->
-					<span class="label label-sale">Sale</span>
-					<!--full quick view block-->
-					<a class="quickview iframe-link visible-lg" data-fancybox-type="iframe"  href="quickview.html">  Quickview</a>
-					<!--end full quick view block-->
-				</div>
-
-
-				<div class="right-block">
-					<div class="caption">
-						<h4><a href="product.html">Apple Cinema 30&quot;</a></h4>
-						<div class="ratings">
-							<div class="rating-box">
-								<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
-								<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
-								<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
-								<span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
-								<span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span>
-							</div>
-						</div>
-
-						<div class="price">
-							<span class="price-new">$74.00</span>
-							<span class="price-old">$122.00</span>
-							<span class="label label-percent">-40%</span>
-						</div>
-						<div class="description item-desc hidden">
-							<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut l..</p>
-						</div>
-					</div>
-
-					  <div class="button-group">
-						<button class="addToCart" type="button" data-toggle="tooltip" title="Add to Cart" onclick="cart.add('42', '1');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs">Add to Cart</span></button>
-						<button class="wishlist" type="button" data-toggle="tooltip" title="Add to Wish List" onclick="wishlist.add('42');"><i class="fa fa-heart"></i></button>
-						<button class="compare" type="button" data-toggle="tooltip" title="Compare this Product" onclick="compare.add('42');"><i class="fa fa-exchange"></i></button>
-					  </div>
-				</div><!-- right block -->
-
-			</div>
+			{% endfor %}
 		</div>
 	</div>
 </div>

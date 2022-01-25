@@ -4,7 +4,7 @@ from django.views.generic import TemplateView, ListView, DetailView
 from django.shortcuts import get_object_or_404
 # Create your views here.
 
-from products.models import Category, Product, SubCategory
+from .models import Category, Product, SubCategory
 
 
 class IndexView(TemplateView):
@@ -38,3 +38,12 @@ class ProductDetailView(DetailView):
     model = Product
     template_name = "product_detail.html"
     context_object_name = "product"
+
+
+    def get_context_data(self, **kwargs):
+        context = super(ProductDetailView, self).get_context_data(**kwargs)
+        related_products = Product.objects.filter(is_active=True, subcategory=self.object.subcategory)
+        context["related_products"] = related_products[:4] if len(related_products) > 4 else related_products
+        return context
+
+
