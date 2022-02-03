@@ -26,9 +26,11 @@
               </tr>
             </thead>
             <tbody>
+            {% for item in cart %}
+            {% with product=item.product %}
               <tr>
-                <td class="text-center"><a href="product.html"><img width="70px" src="image/demo/shop/product/E1.jpg" alt="Xitefun Causal Wear Fancy Shoes" title="Xitefun Causal Wear Fancy Shoes" class="img-thumbnail" /></a></td>
-                <td class="text-left"><a href="product.html">Comas samer rumas</a></td>
+                <td class="text-center"><a href="product.html"><img width="70px" src="{{product.image.url}}" alt="Xitefun Causal Wear Fancy Shoes" title="Xitefun Causal Wear Fancy Shoes" class="img-thumbnail" /></a></td>
+                <td class="text-left"><a href="product.html">{{product.name }}</a></td>
                 <td class="text-left">Pt 002</td>
                 <td class="text-left" width="200px"><div class="input-group btn-block quantity">
                     <input type="text" name="quantity" value="1" size="1" class="form-control" />
@@ -36,9 +38,11 @@
                     <button type="submit" data-toggle="tooltip" title="Update" class="btn btn-primary"><i class="fa fa-clone"</i></button>
                     <button type="button" data-toggle="tooltip" title="Remove" class="btn btn-danger" onClick=""><i class="fa fa-times-circle"></i></button>
                     </span></div></td>
-                <td class="text-right">$150.00</td>
-                <td class="text-right">$150.00</td>
+                <td class="text-right">{{ item.price }}</td>
+                <td class="text-right">{{ item.total_price }}</td>
               </tr>
+            {% endwith %}
+            {% endfor %}
             </tbody>
           </table>
         </div>
