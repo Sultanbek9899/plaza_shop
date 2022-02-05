@@ -28,7 +28,7 @@ class Order(models.Model):
     is_paid = models.BooleanField("Оплачено",default=False, db_index=True)
     total_sum = models.DecimalField("Общая сумма",max_digits=10, decimal_places=2)
     status = models.PositiveSmallIntegerField("Статус", choices=ORDER_STATUSES, db_index=True)
-    
+
     created = models.DateTimeField("Создание", auto_now_add=True, db_index=True)
     updated = models.DateTimeField("Обновление", auto_now=True)
 
