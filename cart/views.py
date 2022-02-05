@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views import  View
 # Create your views here.
-from cart.cart import Cart
+from .cart import Cart
 from products.models import Product
 from django.http import HttpResponseRedirect
 from django.shortcuts import reverse
@@ -17,9 +17,7 @@ from django.views.generic import TemplateView
 def add_cart(request, product_id):
     cart = Cart(request)
     product = Product.objects.get(id=product_id)
-    cart.add(product=product, quantity=1)
-    print(request.session.get('cart'))
-    cart.save()
+    cart.add(product=product, quantity=1, )
     return redirect("cart_page")
 
 

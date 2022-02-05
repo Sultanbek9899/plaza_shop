@@ -1,11 +1,13 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.views.generic import TemplateView, ListView, DetailView
 from django.shortcuts import get_object_or_404
+from django.views.generic.edit import FormMixin
 # Create your views here.
 
 from .models import Category, Product, SubCategory
-
+from cart.forms import CartAddProductForm
+from cart.cart import Cart
 
 class IndexView(TemplateView):
     template_name = "index.html"
@@ -34,16 +36,29 @@ class ProductListView(ListView):
         return queryset
 
 
-class ProductDetailView(DetailView):
+class ProductDetailView(FormMixin, DetailView):
     model = Product
     template_name = "product_detail.html"
     context_object_name = "product"
-
+    form_class = CartAddProductForm
 
     def get_context_data(self, **kwargs):
         context = super(ProductDetailView, self).get_context_data(**kwargs)
         related_products = Product.objects.filter(is_active=True, subcategory=self.object.subcategory)
         context["related_products"] = related_products[:4] if len(related_products) > 4 else related_products
+        context["cart_form"] = CartAddProductForm()
         return context
+
+    def post(self, request, *args, **kwargs):
+        product = self.get_object()
+        form = self.form_class(request.POST)
+        if form.is_valid():
+            cart = Cart(request)
+            cart.add(
+                product=product,
+                quantity=form.cleaned_data.get('quantity'),
+                update_quantity=form.cleaned_data.get('update')
+            )
+            return redirect('cart_page')
 
 
