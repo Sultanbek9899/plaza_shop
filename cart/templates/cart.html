@@ -30,7 +30,11 @@
                 {% with product=item.product %}
                   <tr>
                     <td class="text-center"><a href="product.html"><img width="70px" src="{{product.image.url}}" alt="Xitefun Causal Wear Fancy Shoes" title="Xitefun Causal Wear Fancy Shoes" class="img-thumbnail" /></a></td>
-                    <td class="text-left"><a href="product.html">{{product.name }}</a></td>
+                    <td class="text-left">
+                        <a href="{% url 'product_detail' product.pk %}">
+                            {{ product.name }}
+                        </a>
+                    </td>
                     <td>
                         <form action="{% url 'add_from_form' product.id %}" method="post">
                         {{ item.update_quantity_form.quantity }}
@@ -78,8 +82,9 @@
     </div>
 
      <div class="buttons">
-        <div class="pull-left"><a href="index.html" class="btn btn-primary">Continue Shopping</a></div>
-        <div class="pull-right"><a href="checkout.html" class="btn btn-primary">Checkout</a></div>
+        <div class="pull-left"><a href="{% url 'product_list' %}" class="btn btn-primary">Продолжить покупку</a></div>
+         <a href="{% url 'cart_clear' %}"> <button type="button" class="btn btn-warning"> Очистить корзину</button></a>
+        <div class="pull-right"><a href="checkout.html" class="btn btn-primary">Оформить заказ</a></div>
       </div>
     </div>
     <!--Middle Part End -->

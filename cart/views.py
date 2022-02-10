@@ -53,3 +53,9 @@ def cart_remove(request, id):
     product = Product.objects.get(id=id)
     cart.remove(product=product)
     return redirect('cart_page')
+
+
+def cart_clear(request):
+    cart = Cart(request)
+    cart.clear()
+    return redirect('cart_page')
