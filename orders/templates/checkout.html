@@ -42,51 +42,59 @@
 						  <div class="panel-body">
 							<div class="table-responsive">
 							  <table class="table table-bordered">
-								<thead>
-								  <tr>
-									<td class="text-center">Image</td>
-									<td class="text-left">Product Name</td>
-									<td class="text-left">Quantity</td>
-									<td class="text-right">Unit Price</td>
-									<td class="text-right">Total</td>
-								  </tr>
-								</thead>
+									<thead>
+									  <tr>
+										<td class="text-center">Фото</td>
+										<td class="text-left">Название товара</td>
+										<td class="text-left">Количество</td>
+										<td class="text-right">Цена за товар</td>
+										<td class="text-right">Общая цена</td>
+										<td class="text-right">Действия</td>
+									  </tr>
+									</thead>
 								<tbody>
-								  <tr>
-									<td class="text-center"><a href="product.html"><img width="60px" src="image/demo/shop/product/E4.jpg" alt="Xitefun Causal Wear Fancy Shoes" title="Xitefun Causal Wear Fancy Shoes" class="img-thumbnail"></a></td>
-									<td class="text-left"><a href="product.html">Emasa rumas gacem</a></td>
-									<td class="text-left"><div class="input-group btn-block" style="min-width: 100px;">
-										<input type="text" name="quantity" value="1" size="1" class="form-control">
-										<span class="input-group-btn">
-										<button type="submit" data-toggle="tooltip" title="Update" class="btn btn-primary"><i class="fa fa-refresh"></i></button>
-										<button type="button" data-toggle="tooltip" title="Remove" class="btn btn-danger" onClick=""><i class="fa fa-times-circle"></i></button>
-										</span></div></td>
-									<td class="text-right">$114.35</td>
-									<td class="text-right">$114.35</td>
-								  </tr>
+								{% for item in cart %}
+									{% with product=item.product %}
+									  <tr>
+										<td class="text-center"><a href="product.html"><img width="70px" src="{{product.image.url}}" alt="Xitefun Causal Wear Fancy Shoes" title="Xitefun Causal Wear Fancy Shoes" class="img-thumbnail" /></a></td>
+										<td class="text-left">
+											<a href="{% url 'product_detail' product.pk %}">
+												{{ product.name }}
+											</a>
+										</td>
+										<td>
+											<form action="{% url 'add_from_form' product.id %}" method="post">
+											{{ item.update_quantity_form.quantity }}
+											{{ item.update_quantity_form.update }}
+											<input type="submit" value="Update">
+											{% csrf_token %}
+										</form>
+										</td>
+										<td class="text-right">{{ item.price }}</td>
+										<td class="text-right">{{ item.total_price }}</td>
+										<td class="text-right">
+											<a href="{% url 'cart_remove' product.id %}">
+												<button type="button" class="btn btn-danger">
+													Удалить
+												</button>
+											</a>
+										</td>
+									  </tr>
+									{% endwith %}
+								{% empty %}
+								<tr>
+									<td colspan="6" class="text-center">
+										Корзина пуста
+									</td>
+								</tr>
+								{% endfor %}
 								</tbody>
-								<tfoot>
-								  <tr>
-									<td class="text-right" colspan="4"><strong>Sub-Total:</strong></td>
-									<td class="text-right">$93.73</td>
-								  </tr>
-								  <tr>
-									<td class="text-right" colspan="4"><strong>Flat Shipping Rate:</strong></td>
-									<td class="text-right">$4.69.00</td>
-								  </tr>
-								  <tr>
-									<td class="text-right" colspan="4"><strong>Eco Tax (-2.00):</strong></td>
-									<td class="text-right">$3.75.00</td>
-								  </tr>
-								  <tr>
-									<td class="text-right" colspan="4"><strong>VAT (20%):</strong></td>
-									<td class="text-right">$19.68</td>
-								  </tr>
-								  <tr>
-									<td class="text-right" colspan="4"><strong>Total:</strong></td>
-									<td class="text-right">$121.85</td>
-								  </tr>
-								</tfoot>
+								  <tfoot>
+									  <tr>
+										  <td colspan="5">Общая цена:</td>
+										  <td colspan="5"> {{ cart.get_total_price }}</td>
+									  </tr>
+								  </tfoot>
 							  </table>
 							</div>
 						  </div>
