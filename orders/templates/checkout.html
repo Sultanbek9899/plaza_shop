@@ -3,113 +3,116 @@
 {% block content %}
 
 
-	<!-- //Header Container  -->
-	<!-- Main Container  -->
-	<div class="main-container container">
-		<ul class="breadcrumb">
-			<li><a href="#"><i class="fa fa-home"></i></a></li>
-			<li><a href="#">Checkout</a></li>
+<!-- //Header Container  -->
+<!-- Main Container  -->
+<div class="main-container container">
+	<ul class="breadcrumb">
+		<li><a href="{% url 'index' %}"><i class="fa fa-home"></i></a></li>
+		<li><a href="#">Checkout</a></li>
 
-		</ul>
-
-		<div class="row">
-			<!--Middle Part Start-->
-			<div id="content" class="col-sm-12">
-			  <h2 class="title">Checkout</h2>
-			  <div class="so-onepagecheckout ">
-				<div class="col-left col-sm-3">
-				  <div class="panel panel-default">
-					<div class="panel-heading">
-					  <h4 class="panel-title"><i class="fa fa-user"></i> Личные данные</h4>
-					</div>
-					  <div class="panel-body">
-						<form method="post">
-							{% csrf_token%}
-							{{ form }}
-							<div class='text-center'>
-								<button type="submit" class="btn btn-primary">Создать заказ</button>
-							</div>
-						</form>
-					  </div>
-				  </div>
-				</div>
-
-					<div class="col-sm-12">
-					  <div class="panel panel-default">
+	</ul>
+	<div class="row">
+		<div id="content" class="col-sm-3">
+			<h2 class="title">Оформление заказа</h2>
+			<div class="so-onepagecheckout ">
+				<div class="col-left col-sm-12">
+					<div class="panel panel-default">
 						<div class="panel-heading">
-						  <h4 class="panel-title"><i class="fa fa-shopping-cart"></i> Shopping cart</h4>
+							<h4 class="panel-title"><i class="fa fa-user"></i> Личные данные</h4>
 						</div>
-						  <div class="panel-body">
-							<div class="table-responsive">
-							  <table class="table table-bordered">
-									<thead>
-									  <tr>
-										<td class="text-center">Фото</td>
-										<td class="text-left">Название товара</td>
-										<td class="text-left">Количество</td>
-										<td class="text-right">Цена за товар</td>
-										<td class="text-right">Общая цена</td>
-										<td class="text-right">Действия</td>
-									  </tr>
-									</thead>
-								<tbody>
-								{% for item in cart %}
-									{% with product=item.product %}
-									  <tr>
-										<td class="text-center"><a href="product.html"><img width="70px" src="{{product.image.url}}" alt="Xitefun Causal Wear Fancy Shoes" title="Xitefun Causal Wear Fancy Shoes" class="img-thumbnail" /></a></td>
-										<td class="text-left">
-											<a href="{% url 'product_detail' product.pk %}">
-												{{ product.name }}
-											</a>
-										</td>
-										<td>
-											<form action="{% url 'add_from_form' product.id %}" method="post">
-											{{ item.update_quantity_form.quantity }}
-											{{ item.update_quantity_form.update }}
-											<input type="submit" value="Update">
-											{% csrf_token %}
-										</form>
-										</td>
-										<td class="text-right">{{ item.price }}</td>
-										<td class="text-right">{{ item.total_price }}</td>
-										<td class="text-right">
-											<a href="{% url 'cart_remove' product.id %}">
-												<button type="button" class="btn btn-danger">
-													Удалить
-												</button>
-											</a>
-										</td>
-									  </tr>
-									{% endwith %}
-								{% empty %}
-								<tr>
-									<td colspan="6" class="text-center">
-										Корзина пуста
-									</td>
-								</tr>
-								{% endfor %}
-								</tbody>
-								  <tfoot>
-									  <tr>
-										  <td colspan="5">Общая цена:</td>
-										  <td colspan="5"> {{ cart.get_total_price }}</td>
-									  </tr>
-								  </tfoot>
-							  </table>
-							</div>
-						  </div>
-					  </div>
+						<div class="panel-body">
+							<form method="post">
+								{% csrf_token%}
+								{{ form }}
+								<div class='text-center'>
+									<button style="margin-top: 3rem" type="submit" class="btn btn-primary">Создать заказ</button>
+								</div>
+							</form>
+						</div>
 					</div>
-					</div>
-				  </div>
 				</div>
-			  </div>
 			</div>
-			<!--Middle Part End -->
-
+		</div>
+		<div style="margin-top: 5rem" class="col-sm-9">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title"><i class="fa fa-shopping-cart"></i>     Конзина</h4>
+				</div>
+				<div class="panel-body">
+					<div class="table-responsive">
+						<table class="table table-bordered">
+							<thead>
+							<tr>
+								<td class="text-center">фото</td>
+								<td class="text-left">Название товара</td>
+								<td class="text-left">Количество</td>
+								<td class="text-right">Цена за товар</td>
+								<td class="text-right">Общая цена</td>
+								<td class="text-right">Действия</td>
+							</tr>
+							</thead>
+							<tbody>
+							{% for item in cart %}
+							{% with product=item.product %}
+							<tr>
+								<td class="text-center"><a href="product.html"><img width="70px" src="{{product.image.url}}" alt="Xitefun Causal Wear Fancy Shoes" title="Xitefun Causal Wear Fancy Shoes" class="img-thumbnail" /></a></td>
+								<td class="text-left">
+									<a href="{% url 'product_detail' product.pk %}">
+										{{ product.name }}
+									</a>
+								</td>
+								<td>
+									<form action="{% url 'add_from_form' product.id %}" method="post">
+										{{ item.quantity }}
+										{{ item.update_quantity_form.update }}
+										<input type="submit" value="Update">
+										{% csrf_token %}
+									</form>
+								</td>
+								<td class="text-right">{{ item.price }}</td>
+								<td class="text-right">{{ item.total_price }}</td>
+								<td class="text-right">
+									<a href="{% url 'cart_remove' product.id %}">
+										<button type="button" class="btn btn-danger">
+											Удалить
+										</button>
+									</a>
+								</td>
+							</tr>
+							{% endwith %}
+							{% empty %}
+							<tr>
+								<td colspan="6" class="text-center">
+									Корзина пуста
+								</td>
+							</tr>
+							{% endfor %}
+							</tbody>
+							<tfoot>
+							<tr>
+								<td colspan="5">
+									общая цена
+								</td>
+								<td>
+									{{cart.get_total_price}}
+								</td>
+							</tr>
+							</tfoot>
+						</table>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
-	<!-- //Main Container -->
 
-	<!-- Footer Container -->
+</div>
+</div>
+</div>
+<!--Middle Part End -->
+
+</div>
+</div>
+<!-- //Main Container -->
+
+<!-- Footer Container -->
 {% endblock %}
