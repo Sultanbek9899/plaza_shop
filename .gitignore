@@ -5,7 +5,7 @@ __pycache__/
 # C extensions
 *.so
 # Distribution / packaging
-media/
+backend/media/
 .Python
 build/
 develop-eggs/
@@ -139,7 +139,7 @@ cython_debug/
 
 .idea/
 env
-/media
+/backend/media
 /staticfiles
 
 .DS_Store
@@ -154,7 +154,7 @@ Status
 Docs
 Contact GitHub
 Pricing
-API
+backend/apps/api
 Training
 Blog
 About

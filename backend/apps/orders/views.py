@@ -4,7 +4,7 @@ from django.shortcuts import render, reverse
 from django.views.generic import FormView
 from .forms import OrderCheckoutForm
 from .models import OrderItem, Order
-from cart.cart import Cart
+from backend.apps.cart.cart import Cart
 
 
 class CheckoutView(FormView):

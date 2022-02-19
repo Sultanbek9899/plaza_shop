@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.views import  View
 # Create your views here.
 from .cart import Cart
-from products.models import Product
+from backend.apps.products.models import Product
 from django.http import HttpResponseRedirect
 from django.shortcuts import reverse
 from django.views.generic import TemplateView

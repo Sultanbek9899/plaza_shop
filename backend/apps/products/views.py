@@ -6,8 +6,8 @@ from django.views.generic.edit import FormMixin
 # Create your views here.
 
 from .models import Category, Product, SubCategory
-from cart.forms import CartAddProductForm
-from cart.cart import Cart
+from backend.apps.cart.forms import CartAddProductForm
+from backend.apps.cart.cart import Cart
 
 class IndexView(TemplateView):
     template_name = "index.html"

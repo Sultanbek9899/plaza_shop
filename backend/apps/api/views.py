@@ -1,6 +1,6 @@
 from rest_framework.generics import ListAPIView, RetrieveAPIView
 from .serializers import ProductSerializer, CategorySerializer , SubCategorySerializer
-from products.models import Product, Category, SubCategory
+from backend.apps.products.models import Product, Category, SubCategory
 
 
 class ProductListAPIView(ListAPIView):

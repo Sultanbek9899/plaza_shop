@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-from products.models import Product
+from backend.apps.products.models import Product
 
 
 class Order(models.Model):

@@ -1,4 +1,4 @@
-"""plaza_shop URL Configuration
+"""config URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -20,10 +20,10 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('products.urls')),
-    path('orders/', include('orders.urls')),
-    path('cart/', include("cart.urls")),
-    path('api/', include("api.urls")),
+    path('', include('backend.apps.products.urls')),
+    path('orders/', include('backend.apps.orders.urls')),
+    path('cart/', include("backend.apps.cart.urls")),
+    path('api/', include("backend.apps.api.urls")),
 ]
 
 if settings.DEBUG:

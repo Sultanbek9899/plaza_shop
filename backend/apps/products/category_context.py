@@ -1,4 +1,4 @@
-from products.models import Category
+from backend.apps.products.models import Category
 
 def get_category(request):
     categories = Category.objects.all()
