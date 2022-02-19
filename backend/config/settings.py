@@ -21,10 +21,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-%r5y%%ajr2&xl=7+h5gokha-n$0g)t*iylq%5x--2q69qpk$h@'
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", default='django-insecure-%r5y%%ajr2&xl=7+h5gokha-n$0g)t*iylq%5x--2q69qpk$h@')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG", default=True)
 
 ALLOWED_HOSTS = []
 
@@ -86,11 +86,11 @@ WSGI_APPLICATION = 'backend.config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'shop_db',
-        'PASSWORD': 'admin',
-        'USER': 'shop_user',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'NAME': os.getenv("POSTGRES_DB", default='shop_db'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD', default="admin"),
+        'USER': os.getenv("POSTGRES_USER", default='shop_user'),
+        'HOST': os.getenv("POSTGRES_HOST", default='127.0.0.1'),
+        'PORT': os.getenv("POSTGRES_HOST", default='5432'),
     }
 }
 

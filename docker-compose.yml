@@ -1,0 +1,39 @@
+version: "3.7"
+
+services:
+  plaza_shop:
+    container_name: plaza_shop
+    restart: always
+    build:
+      context: .
+      dockerfile: dockerfiles/Dockerfile
+    command: run
+    volumes:
+      - ./staticfiles:/app/staticfiles
+      - ./media:/app/media
+    env_file:
+      .env
+    ports:
+      - 127.0.0.1:8000:8000
+    links:
+      - db
+    depends_on:
+      - db
+
+
+  db:
+    container_name: plaza_db
+    restart: always
+    image: postgres:12.4-alpine
+    volumes:
+      - postgres-data:/var/lib/postgresql/data/
+    environment:
+      POSTGRES_PASSWORD: aircraft2021
+      POSTGRES_USER: aircraft_user
+      POSTGRES_DB: aircraft
+      POSTGRES_HOST: db
+    expose:
+      - 5432
+
+volumes:
+  postgres-data:
