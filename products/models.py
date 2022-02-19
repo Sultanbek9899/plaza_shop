@@ -23,7 +23,7 @@ class SubCategory(models.Model):
         verbose_name_plural = "Подкатегории"
 
     def __str__(self):
-        return self.name
+        return self.slug
 
 
 class Product(models.Model):
