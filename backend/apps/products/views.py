@@ -1,16 +1,33 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.views.generic import TemplateView, ListView, DetailView
+from django.views import  View
 from django.shortcuts import get_object_or_404
 from django.views.generic.edit import FormMixin
 # Create your views here.
 
 from .models import Category, Product, SubCategory
+from .forms import SearchForm
 from backend.apps.cart.forms import CartAddProductForm
 from backend.apps.cart.cart import Cart
 
-class IndexView(TemplateView):
+class IndexView(FormMixin,TemplateView):
     template_name = "index.html"
+    form_class = SearchForm
+
+    def get_context_data(self, **kwargs):
+        context = super(IndexView, self).get_context_data(**kwargs)
+        context['search_form'] = self.form_class()
+        return context
+
+    def post(self, request, *args, **kwargs):
+        print('asf')
+        form = self.form_class(request.POST)
+        if form.is_valid():
+            search_text = form.cleaned_data.get('searchfield')
+
+            products = Product.objects.filter(name__contains=search_text)
+            return render(request, 'result.html', {'products': products})
 
 
 class ProductListView(ListView):
@@ -60,5 +77,10 @@ class ProductDetailView(FormMixin, DetailView):
                 update_quantity=form.cleaned_data.get('update')
             )
             return redirect('cart_page')
+
+
+
+
+
 
 
