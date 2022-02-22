@@ -40,3 +40,9 @@ class ProductSerializer(serializers.ModelSerializer):
         ]
 
 
+class ProductCreateSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Product
+        exclude = ('created', 'updated', 'id')
+

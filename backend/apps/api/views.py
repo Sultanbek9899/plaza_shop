@@ -1,7 +1,13 @@
-from rest_framework.generics import ListAPIView, RetrieveAPIView
-from .serializers import ProductSerializer, CategorySerializer , SubCategorySerializer
+from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView
+from .serializers import (
+    ProductSerializer,
+    CategorySerializer ,
+    SubCategorySerializer,
+    ProductCreateSerializer
+)
 from backend.apps.products.models import Product, Category, SubCategory
-
+from rest_framework.response import  Response
+from rest_framework import  status
 
 class ProductListAPIView(ListAPIView):
     serializer_class = ProductSerializer
@@ -29,6 +35,11 @@ class SubCategoryListAPIView(ListAPIView):
             return qs
         qs = SubCategory.objects.all()
         return qs
+
+
+class ProductCreateAPIView(CreateAPIView):
+    serializer_class = ProductCreateSerializer
+
 
 
 
